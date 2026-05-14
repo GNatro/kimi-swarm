@@ -15,18 +15,35 @@ if [ -d "$REQUESTS_DIR" ]; then
     now=$(date +%s)
     for req in "$REQUESTS_DIR"/*.json; do
         [ -f "$req" ] || continue
-        task_id=$(basename "$req" .json)
         req_time=$(stat -c %Y "$req" 2>/dev/null || echo 0)
         
-        # Check if any response exists
+        # Read real taskId from JSON (not filename which has timestamp prefix)
+        task_id=""
+        if command -v jq >/dev/null 2>&1; then
+            task_id=$(jq -r '.taskId // empty' "$req" 2>/dev/null || echo "")
+        fi
+        # Fallback: extract from filename {timestamp}-{taskId}.json
+        if [ -z "$task_id" ]; then
+            filename=$(basename "$req" .json)
+            task_id="${filename#*-}"
+        fi
+        
+        # Check if any response exists for this taskId
         resp_exists=false
         if [ -d "$RESPONSES_DIR" ]; then
+            # Match patterns: task-XXX-single-result.md, task-XXX-sub-N-result.md, task-XXX-result.md
             if find "$RESPONSES_DIR" -name "${task_id}*-result.md" | grep -q .; then
                 resp_exists=true
             fi
         fi
         
-        if [ "$resp_exists" = false ]; then
+        # Also skip if already integrated (has integration plan)
+        already_integrated=false
+        if [ -f "$BUS_DIR/integration-plans/${task_id}-integration.md" ]; then
+            already_integrated=true
+        fi
+        
+        if [ "$resp_exists" = false ] && [ "$already_integrated" = false ]; then
             elapsed=$((now - req_time))
             if [ "$elapsed" -gt 1800 ]; then
                 STUCK_TASKS="$STUCK_TASKS $task_id"
@@ -49,9 +66,19 @@ if [ -d "$REQUESTS_DIR" ]; then
         req_time=$(stat -c %Y "$req" 2>/dev/null || echo 0)
         elapsed=$((now - req_time))
         if [ "$elapsed" -gt 86400 ]; then
-            task_id=$(basename "$req" .json)
+            # Read real taskId from JSON
+            task_id=""
+            if command -v jq >/dev/null 2>&1; then
+                task_id=$(jq -r '.taskId // empty' "$req" 2>/dev/null || echo "")
+            fi
+            if [ -z "$task_id" ]; then
+                filename=$(basename "$req" .json)
+                task_id="${filename#*-}"
+            fi
             rm -f "$req"
             rm -f "$RESPONSES_DIR/${task_id}"*-result.md
+            rm -f "$BUS_DIR/integration-plans/${task_id}-integration.md"
+            rm -f "$BUS_DIR/prompts/${task_id}"*.md
             echo "   Cleaned old task: $task_id"
         fi
     done
