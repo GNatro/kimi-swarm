@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Runtime data
+bus/requests/*
+bus/responses/*
+bus/processing/*
+bus/archive/*
+bus/checkpoints/*
+bus/integration-plans/*
+!bus/.gitkeep
+
+# Logs
+logs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build outputs
+dist/
+*.tsbuildinfo

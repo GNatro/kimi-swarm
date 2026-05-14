@@ -1,0 +1,60 @@
+# Context Seed — {{PROJECT_NAME}} — {{ISO_TIMESTAMP}}
+
+> Post-compaction recovery snapshot. Use this to rehydrate operational context after context window compaction or session restart.
+
+---
+
+## Current Focus
+
+{{1-2 sentences describing what the swarm is currently working on.}}
+
+---
+
+## Active Subsystems
+
+| Subsystem | Status | Notes |
+|---|---|---|
+| `{{subsystem-1}}` | `{{stable \| active \| at-risk}}` | {{1-2 lines of current state}} |
+| `{{subsystem-2}}` | `{{stable \| active \| at-risk}}` | {{1-2 lines of current state}} |
+| `{{subsystem-3}}` | `{{stable \| active \| at-risk}}` | {{1-2 lines of current state}} |
+
+---
+
+## Pending Tasks
+
+| ID | Worker | Objective | Priority | Status |
+|---|---|---|---|---|
+| `{{TASK-XXX}}` | `{{worker-N}}` | {{Brief objective}} | `{{P0 \| P1 \| P2}}` | `{{queued \| active \| blocked}}` |
+| `{{TASK-YYY}}` | `{{worker-N}}` | {{Brief objective}} | `{{P0 \| P1 \| P2}}` | `{{queued \| active \| blocked}}` |
+
+---
+
+## Blockers
+
+- [ ] **{{BLOCKER-1}}**: {{Description of critical blocker. Include who is responsible for resolution.}}
+- [ ] **{{BLOCKER-2}}**: {{Description of critical blocker, or write "None" if clear.}}
+
+---
+
+## Decisions
+
+| Date | Decision | Rationale |
+|---|---|---|
+| `{{YYYY-MM-DD}}` | {{Short decision statement}} | {{Why this was chosen}} |
+| `{{YYYY-MM-DD}}` | {{Short decision statement}} | {{Why this was chosen}} |
+
+---
+
+## Next Steps (Prioritized)
+
+1. `{{P0}}` — {{Next immediate action}}
+2. `{{P1}}` — {{Next action after P0}}
+3. `{{P2}}` — {{Lower priority follow-up}}
+
+---
+
+## Links to Knowledge Base
+
+- `~/.kimi/knowledge/{{project}}/{{YYYY-MM-DD-topic}}.md`
+- `~/.kimi/contexts/{{project}}/{{context-name}}.md`
+- {{Any other relevant drill-down paths or references}}

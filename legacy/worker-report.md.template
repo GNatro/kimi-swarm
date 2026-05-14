@@ -1,0 +1,59 @@
+# Worker Report: {{TASK_ID}}
+
+**Worker:** `{{worker-1..5}}`  
+**Project:** `{{solbot|polybot}}`  
+**Submitted:** `{{ISO timestamp}}`  
+**Status:** `{{COMPLETED | PARTIAL | BLOCKED}}`
+
+---
+
+## Summary
+
+{{2-3 sentences summarizing what was done and the outcome.}}
+
+---
+
+## Changes Made
+
+- {{Change 1: brief description of what was modified/created}}
+- {{Change 2: brief description of what was modified/created}}
+- {{Change 3: brief description of what was modified/created}}
+
+---
+
+## Technical Notes
+
+{{Important implementation details, design decisions, caveats, or architectural notes. Include anything the Orquestador should know for future tasks or context passing.}}
+
+---
+
+## Tests / Validation
+
+- {{How was the change tested? e.g., `npm test`, manual verification, lint check}}
+- {{Test results: PASS / FAIL / SKIPPED}}
+- {{Any regressions observed?}}
+
+---
+
+## Next Steps
+
+1. {{Next action 1: what should happen next, who should do it}}
+2. {{Next action 2: optional follow-up task}}
+3. {{Next action 3: optional}}
+
+---
+
+## Files Modified
+
+| File | Action |
+|---|---|
+| `{{path/to/file1.ts}}` | {{modified \| created \| deleted}} |
+| `{{path/to/file2.ts}}` | {{modified \| created \| deleted}} |
+
+---
+
+## Context Used
+
+- **Brief tokens consumed:** `{{~N tokens}}`
+- **Context window at start:** `{{~N tokens}}`
+- **Context window at end:** `{{~N tokens}}`

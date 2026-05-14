@@ -1,0 +1,25 @@
+{
+  "task_id": "TASK-{{timestamp}}-{{sequence}}",
+  "worker": "worker-{{1..5}}",
+  "project": "{{solbot|polybot}}",
+  "context": "{{2-3 sentences of relevant project state, including recent changes and current focus area. Keep under 150 tokens.}}",
+  "objective": "{{Clear, atomic task description. Must be completable in 30 minutes or less. No compound tasks.}}",
+  "constraints": [
+    "{{Constraint 1: e.g., do not modify tests unless instructed}}",
+    "{{Constraint 2: e.g., maintain backward compatibility}}",
+    "{{Constraint 3: e.g., use existing patterns from src/...}}"
+  ],
+  "input_artifacts": [
+    "{{path/to/file1.ts}}",
+    "{{path/to/file2.ts}}",
+    "{{optional: URL or data blob}}"
+  ],
+  "expected_output": "{{Description of what the worker must produce: code, analysis, test results, documentation.}}",
+  "success_criteria": [
+    "{{Criterion 1: e.g., all tests pass}}",
+    "{{Criterion 2: e.g., no TypeScript errors}}",
+    "{{Criterion 3: e.g., brief description of expected behavior}}"
+  ],
+  "created_at": "{{ISO-8601 timestamp, e.g., 2026-05-14T12:00:00Z}}",
+  "deadline": "{{optional ISO-8601 deadline, or null}}"
+}

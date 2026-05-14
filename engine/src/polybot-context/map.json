@@ -1,0 +1,2294 @@
+{
+  "projectName": "polybot",
+  "projectRoot": "/home/grapho/projects/polybot",
+  "totalFiles": 324,
+  "totalTokens": 527967,
+  "services": [
+    {
+      "name": "activity-tracker",
+      "path": "src/services/activity-tracker",
+      "files": [
+        {
+          "relativePath": "src/services/activity-tracker/__tests__/bet-detector.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/activity-tracker/__tests__/bet-detector.test.ts",
+          "sizeBytes": 7256,
+          "estimatedTokens": 1814
+        },
+        {
+          "relativePath": "src/services/activity-tracker/__tests__/ws-monitor.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/activity-tracker/__tests__/ws-monitor.test.ts",
+          "sizeBytes": 3613,
+          "estimatedTokens": 904
+        },
+        {
+          "relativePath": "src/services/activity-tracker/activity-poller.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/activity-tracker/activity-poller.ts",
+          "sizeBytes": 7619,
+          "estimatedTokens": 1905
+        },
+        {
+          "relativePath": "src/services/activity-tracker/bet-detector.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/activity-tracker/bet-detector.ts",
+          "sizeBytes": 5099,
+          "estimatedTokens": 1275
+        },
+        {
+          "relativePath": "src/services/activity-tracker/dedup-manager.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/activity-tracker/dedup-manager.ts",
+          "sizeBytes": 6858,
+          "estimatedTokens": 1715
+        },
+        {
+          "relativePath": "src/services/activity-tracker/index.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/activity-tracker/index.ts",
+          "sizeBytes": 12639,
+          "estimatedTokens": 3160
+        },
+        {
+          "relativePath": "src/services/activity-tracker/market-resolver.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/activity-tracker/market-resolver.ts",
+          "sizeBytes": 6213,
+          "estimatedTokens": 1554
+        },
+        {
+          "relativePath": "src/services/activity-tracker/types.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/activity-tracker/types.ts",
+          "sizeBytes": 1825,
+          "estimatedTokens": 457
+        },
+        {
+          "relativePath": "src/services/activity-tracker/ws-monitor.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/activity-tracker/ws-monitor.ts",
+          "sizeBytes": 9981,
+          "estimatedTokens": 2496
+        }
+      ],
+      "totalTokens": 15280,
+      "importsFrom": [
+        ".."
+      ],
+      "importedBy": [],
+      "sharedDependencies": []
+    },
+    {
+      "name": "allocation-manager",
+      "path": "src/services/allocation-manager",
+      "files": [
+        {
+          "relativePath": "src/services/allocation-manager/__tests__/allocator.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/allocation-manager/__tests__/allocator.test.ts",
+          "sizeBytes": 10445,
+          "estimatedTokens": 2612
+        },
+        {
+          "relativePath": "src/services/allocation-manager/__tests__/auto-unpause.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/allocation-manager/__tests__/auto-unpause.test.ts",
+          "sizeBytes": 4769,
+          "estimatedTokens": 1193
+        },
+        {
+          "relativePath": "src/services/allocation-manager/__tests__/risk-guard.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/allocation-manager/__tests__/risk-guard.test.ts",
+          "sizeBytes": 7834,
+          "estimatedTokens": 1959
+        },
+        {
+          "relativePath": "src/services/allocation-manager/__tests__/rotation.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/allocation-manager/__tests__/rotation.test.ts",
+          "sizeBytes": 4719,
+          "estimatedTokens": 1180
+        },
+        {
+          "relativePath": "src/services/allocation-manager/allocator.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/allocation-manager/allocator.ts",
+          "sizeBytes": 17055,
+          "estimatedTokens": 4264
+        },
+        {
+          "relativePath": "src/services/allocation-manager/index.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/allocation-manager/index.ts",
+          "sizeBytes": 15674,
+          "estimatedTokens": 3919
+        },
+        {
+          "relativePath": "src/services/allocation-manager/promoter.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/allocation-manager/promoter.ts",
+          "sizeBytes": 7095,
+          "estimatedTokens": 1774
+        },
+        {
+          "relativePath": "src/services/allocation-manager/risk-guard.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/allocation-manager/risk-guard.ts",
+          "sizeBytes": 9760,
+          "estimatedTokens": 2440
+        },
+        {
+          "relativePath": "src/services/allocation-manager/rotation.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/allocation-manager/rotation.ts",
+          "sizeBytes": 8312,
+          "estimatedTokens": 2078
+        },
+        {
+          "relativePath": "src/services/allocation-manager/types.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/allocation-manager/types.ts",
+          "sizeBytes": 2330,
+          "estimatedTokens": 583
+        }
+      ],
+      "totalTokens": 22002,
+      "importsFrom": [],
+      "importedBy": [],
+      "sharedDependencies": []
+    },
+    {
+      "name": "analytics",
+      "path": "src/services/analytics",
+      "files": [
+        {
+          "relativePath": "src/services/analytics/collector.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/analytics/collector.ts",
+          "sizeBytes": 7123,
+          "estimatedTokens": 1781
+        },
+        {
+          "relativePath": "src/services/analytics/index.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/analytics/index.ts",
+          "sizeBytes": 1783,
+          "estimatedTokens": 446
+        },
+        {
+          "relativePath": "src/services/analytics/types.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/analytics/types.ts",
+          "sizeBytes": 937,
+          "estimatedTokens": 235
+        }
+      ],
+      "totalTokens": 2462,
+      "importsFrom": [],
+      "importedBy": [],
+      "sharedDependencies": []
+    },
+    {
+      "name": "anomaly-detector",
+      "path": "src/services/anomaly-detector",
+      "files": [
+        {
+          "relativePath": "src/services/anomaly-detector/__tests__/detectors.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/anomaly-detector/__tests__/detectors.test.ts",
+          "sizeBytes": 11303,
+          "estimatedTokens": 2826
+        },
+        {
+          "relativePath": "src/services/anomaly-detector/detectors/bettor-drift.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/anomaly-detector/detectors/bettor-drift.ts",
+          "sizeBytes": 6875,
+          "estimatedTokens": 1719
+        },
+        {
+          "relativePath": "src/services/anomaly-detector/detectors/concentration.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/anomaly-detector/detectors/concentration.ts",
+          "sizeBytes": 3587,
+          "estimatedTokens": 897
+        },
+        {
+          "relativePath": "src/services/anomaly-detector/detectors/financial.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/anomaly-detector/detectors/financial.ts",
+          "sizeBytes": 4390,
+          "estimatedTokens": 1098
+        },
+        {
+          "relativePath": "src/services/anomaly-detector/detectors/pipeline-health.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/anomaly-detector/detectors/pipeline-health.ts",
+          "sizeBytes": 5242,
+          "estimatedTokens": 1311
+        },
+        {
+          "relativePath": "src/services/anomaly-detector/detectors/stuck-positions.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/anomaly-detector/detectors/stuck-positions.ts",
+          "sizeBytes": 2723,
+          "estimatedTokens": 681
+        },
+        {
+          "relativePath": "src/services/anomaly-detector/detectors/system.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/anomaly-detector/detectors/system.ts",
+          "sizeBytes": 4052,
+          "estimatedTokens": 1013
+        },
+        {
+          "relativePath": "src/services/anomaly-detector/index.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/anomaly-detector/index.ts",
+          "sizeBytes": 6038,
+          "estimatedTokens": 1510
+        },
+        {
+          "relativePath": "src/services/anomaly-detector/types.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/anomaly-detector/types.ts",
+          "sizeBytes": 629,
+          "estimatedTokens": 158
+        }
+      ],
+      "totalTokens": 11213,
+      "importsFrom": [
+        "detectors",
+        ".."
+      ],
+      "importedBy": [],
+      "sharedDependencies": []
+    },
+    {
+      "name": "auto-calibrator",
+      "path": "src/services/auto-calibrator",
+      "files": [
+        {
+          "relativePath": "src/services/auto-calibrator/__tests__/engine.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/auto-calibrator/__tests__/engine.test.ts",
+          "sizeBytes": 2399,
+          "estimatedTokens": 600
+        },
+        {
+          "relativePath": "src/services/auto-calibrator/engine.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/auto-calibrator/engine.ts",
+          "sizeBytes": 8286,
+          "estimatedTokens": 2072
+        },
+        {
+          "relativePath": "src/services/auto-calibrator/index.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/auto-calibrator/index.ts",
+          "sizeBytes": 15039,
+          "estimatedTokens": 3760
+        },
+        {
+          "relativePath": "src/services/auto-calibrator/types.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/auto-calibrator/types.ts",
+          "sizeBytes": 955,
+          "estimatedTokens": 239
+        }
+      ],
+      "totalTokens": 6671,
+      "importsFrom": [
+        ".."
+      ],
+      "importedBy": [],
+      "sharedDependencies": []
+    },
+    {
+      "name": "backtesting",
+      "path": "src/services/backtesting",
+      "files": [
+        {
+          "relativePath": "src/services/backtesting/data-fetcher.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/backtesting/data-fetcher.ts",
+          "sizeBytes": 12435,
+          "estimatedTokens": 3109
+        },
+        {
+          "relativePath": "src/services/backtesting/index.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/backtesting/index.ts",
+          "sizeBytes": 14282,
+          "estimatedTokens": 3571
+        },
+        {
+          "relativePath": "src/services/backtesting/simulator.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/backtesting/simulator.ts",
+          "sizeBytes": 11037,
+          "estimatedTokens": 2760
+        },
+        {
+          "relativePath": "src/services/backtesting/types.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/backtesting/types.ts",
+          "sizeBytes": 3238,
+          "estimatedTokens": 810
+        }
+      ],
+      "totalTokens": 10250,
+      "importsFrom": [],
+      "importedBy": [],
+      "sharedDependencies": []
+    },
+    {
+      "name": "bettor-discovery",
+      "path": "src/services/bettor-discovery",
+      "files": [
+        {
+          "relativePath": "src/services/bettor-discovery/__tests__/bettor-classifier.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/bettor-discovery/__tests__/bettor-classifier.test.ts",
+          "sizeBytes": 3154,
+          "estimatedTokens": 789
+        },
+        {
+          "relativePath": "src/services/bettor-discovery/__tests__/bettor-scorer.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/bettor-discovery/__tests__/bettor-scorer.test.ts",
+          "sizeBytes": 24037,
+          "estimatedTokens": 6010
+        },
+        {
+          "relativePath": "src/services/bettor-discovery/__tests__/market-scanner.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/bettor-discovery/__tests__/market-scanner.test.ts",
+          "sizeBytes": 3502,
+          "estimatedTokens": 876
+        },
+        {
+          "relativePath": "src/services/bettor-discovery/__tests__/outcome-matching.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/bettor-discovery/__tests__/outcome-matching.test.ts",
+          "sizeBytes": 1475,
+          "estimatedTokens": 369
+        },
+        {
+          "relativePath": "src/services/bettor-discovery/__tests__/positions-scoring.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/bettor-discovery/__tests__/positions-scoring.test.ts",
+          "sizeBytes": 1532,
+          "estimatedTokens": 383
+        },
+        {
+          "relativePath": "src/services/bettor-discovery/bettor-classifier.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/bettor-discovery/bettor-classifier.ts",
+          "sizeBytes": 1589,
+          "estimatedTokens": 398
+        },
+        {
+          "relativePath": "src/services/bettor-discovery/bettor-scorer.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/bettor-discovery/bettor-scorer.ts",
+          "sizeBytes": 12859,
+          "estimatedTokens": 3215
+        },
+        {
+          "relativePath": "src/services/bettor-discovery/index.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/bettor-discovery/index.ts",
+          "sizeBytes": 37487,
+          "estimatedTokens": 9372
+        },
+        {
+          "relativePath": "src/services/bettor-discovery/leaderboard-scraper.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/bettor-discovery/leaderboard-scraper.ts",
+          "sizeBytes": 4654,
+          "estimatedTokens": 1164
+        },
+        {
+          "relativePath": "src/services/bettor-discovery/market-scanner.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/bettor-discovery/market-scanner.ts",
+          "sizeBytes": 6034,
+          "estimatedTokens": 1509
+        },
+        {
+          "relativePath": "src/services/bettor-discovery/types.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/bettor-discovery/types.ts",
+          "sizeBytes": 1142,
+          "estimatedTokens": 286
+        }
+      ],
+      "totalTokens": 24371,
+      "importsFrom": [
+        "..",
+        "database",
+        "market-cache",
+        "polymarket-client",
+        "ml-scoring"
+      ],
+      "importedBy": [],
+      "sharedDependencies": [
+        "core"
+      ]
+    },
+    {
+      "name": "bettor-stats",
+      "path": "src/services/bettor-stats",
+      "files": [
+        {
+          "relativePath": "src/services/bettor-stats/index.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/bettor-stats/index.ts",
+          "sizeBytes": 5731,
+          "estimatedTokens": 1433
+        }
+      ],
+      "totalTokens": 1433,
+      "importsFrom": [],
+      "importedBy": [],
+      "sharedDependencies": []
+    },
+    {
+      "name": "copy-betting",
+      "path": "src/services/copy-betting",
+      "files": [
+        {
+          "relativePath": "src/services/copy-betting/__tests__/enrichment.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/copy-betting/__tests__/enrichment.test.ts",
+          "sizeBytes": 9880,
+          "estimatedTokens": 2470
+        },
+        {
+          "relativePath": "src/services/copy-betting/__tests__/signal-handler.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/copy-betting/__tests__/signal-handler.test.ts",
+          "sizeBytes": 11581,
+          "estimatedTokens": 2896
+        },
+        {
+          "relativePath": "src/services/copy-betting/__tests__/validation.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/copy-betting/__tests__/validation.test.ts",
+          "sizeBytes": 28364,
+          "estimatedTokens": 7091
+        },
+        {
+          "relativePath": "src/services/copy-betting/balance-provider.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/copy-betting/balance-provider.ts",
+          "sizeBytes": 1876,
+          "estimatedTokens": 469
+        },
+        {
+          "relativePath": "src/services/copy-betting/enrichment.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/copy-betting/enrichment.ts",
+          "sizeBytes": 5828,
+          "estimatedTokens": 1457
+        },
+        {
+          "relativePath": "src/services/copy-betting/index.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/copy-betting/index.ts",
+          "sizeBytes": 6326,
+          "estimatedTokens": 1582
+        },
+        {
+          "relativePath": "src/services/copy-betting/pending-queue-worker.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/copy-betting/pending-queue-worker.ts",
+          "sizeBytes": 1110,
+          "estimatedTokens": 278
+        },
+        {
+          "relativePath": "src/services/copy-betting/pending-queue.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/copy-betting/pending-queue.ts",
+          "sizeBytes": 8378,
+          "estimatedTokens": 2095
+        },
+        {
+          "relativePath": "src/services/copy-betting/signal-handler.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/copy-betting/signal-handler.ts",
+          "sizeBytes": 26951,
+          "estimatedTokens": 6738
+        },
+        {
+          "relativePath": "src/services/copy-betting/types.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/copy-betting/types.ts",
+          "sizeBytes": 3779,
+          "estimatedTokens": 945
+        },
+        {
+          "relativePath": "src/services/copy-betting/validation.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/copy-betting/validation.ts",
+          "sizeBytes": 19665,
+          "estimatedTokens": 4917
+        }
+      ],
+      "totalTokens": 30938,
+      "importsFrom": [
+        ".."
+      ],
+      "importedBy": [],
+      "sharedDependencies": []
+    },
+    {
+      "name": "cost-tracker",
+      "path": "src/services/cost-tracker",
+      "files": [
+        {
+          "relativePath": "src/services/cost-tracker/__tests__/cost-tracker.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/cost-tracker/__tests__/cost-tracker.test.ts",
+          "sizeBytes": 10201,
+          "estimatedTokens": 2551
+        },
+        {
+          "relativePath": "src/services/cost-tracker/cost-tracker.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/cost-tracker/cost-tracker.ts",
+          "sizeBytes": 10139,
+          "estimatedTokens": 2535
+        },
+        {
+          "relativePath": "src/services/cost-tracker/index.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/cost-tracker/index.ts",
+          "sizeBytes": 2071,
+          "estimatedTokens": 518
+        },
+        {
+          "relativePath": "src/services/cost-tracker/types.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/cost-tracker/types.ts",
+          "sizeBytes": 587,
+          "estimatedTokens": 147
+        }
+      ],
+      "totalTokens": 5751,
+      "importsFrom": [],
+      "importedBy": [],
+      "sharedDependencies": []
+    },
+    {
+      "name": "dashboard",
+      "path": "src/services/dashboard",
+      "files": [
+        {
+          "relativePath": "src/services/dashboard/index.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/dashboard/index.ts",
+          "sizeBytes": 26992,
+          "estimatedTokens": 6748
+        }
+      ],
+      "totalTokens": 6748,
+      "importsFrom": [],
+      "importedBy": [],
+      "sharedDependencies": []
+    },
+    {
+      "name": "database",
+      "path": "src/services/database",
+      "files": [
+        {
+          "relativePath": "src/services/database/index.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/database/index.ts",
+          "sizeBytes": 83,
+          "estimatedTokens": 21
+        },
+        {
+          "relativePath": "src/services/database/schema.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/database/schema.ts",
+          "sizeBytes": 24628,
+          "estimatedTokens": 6157
+        }
+      ],
+      "totalTokens": 6178,
+      "importsFrom": [],
+      "importedBy": [
+        "bettor-discovery",
+        "market-cache"
+      ],
+      "sharedDependencies": []
+    },
+    {
+      "name": "live-betting",
+      "path": "src/services/live-betting",
+      "files": [
+        {
+          "relativePath": "src/services/live-betting/__tests__/kill-switch-auto-reset.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/live-betting/__tests__/kill-switch-auto-reset.test.ts",
+          "sizeBytes": 2937,
+          "estimatedTokens": 735
+        },
+        {
+          "relativePath": "src/services/live-betting/__tests__/order-executor.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/live-betting/__tests__/order-executor.test.ts",
+          "sizeBytes": 11670,
+          "estimatedTokens": 2918
+        },
+        {
+          "relativePath": "src/services/live-betting/__tests__/reconciliation.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/live-betting/__tests__/reconciliation.test.ts",
+          "sizeBytes": 4404,
+          "estimatedTokens": 1101
+        },
+        {
+          "relativePath": "src/services/live-betting/__tests__/shadow-mode.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/live-betting/__tests__/shadow-mode.test.ts",
+          "sizeBytes": 11295,
+          "estimatedTokens": 2824
+        },
+        {
+          "relativePath": "src/services/live-betting/fill-tracker.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/live-betting/fill-tracker.ts",
+          "sizeBytes": 4494,
+          "estimatedTokens": 1124
+        },
+        {
+          "relativePath": "src/services/live-betting/heartbeat.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/live-betting/heartbeat.ts",
+          "sizeBytes": 3704,
+          "estimatedTokens": 926
+        },
+        {
+          "relativePath": "src/services/live-betting/index.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/live-betting/index.ts",
+          "sizeBytes": 22209,
+          "estimatedTokens": 5553
+        },
+        {
+          "relativePath": "src/services/live-betting/kill-switch.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/live-betting/kill-switch.ts",
+          "sizeBytes": 4813,
+          "estimatedTokens": 1204
+        },
+        {
+          "relativePath": "src/services/live-betting/order-builder.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/live-betting/order-builder.ts",
+          "sizeBytes": 6513,
+          "estimatedTokens": 1629
+        },
+        {
+          "relativePath": "src/services/live-betting/order-executor.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/live-betting/order-executor.ts",
+          "sizeBytes": 34719,
+          "estimatedTokens": 8680
+        },
+        {
+          "relativePath": "src/services/live-betting/orderbook-pricer.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/live-betting/orderbook-pricer.ts",
+          "sizeBytes": 8057,
+          "estimatedTokens": 2015
+        },
+        {
+          "relativePath": "src/services/live-betting/reconciliation.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/live-betting/reconciliation.ts",
+          "sizeBytes": 6870,
+          "estimatedTokens": 1718
+        },
+        {
+          "relativePath": "src/services/live-betting/retry-classifier.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/live-betting/retry-classifier.ts",
+          "sizeBytes": 3247,
+          "estimatedTokens": 812
+        },
+        {
+          "relativePath": "src/services/live-betting/retry-manager.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/live-betting/retry-manager.ts",
+          "sizeBytes": 5038,
+          "estimatedTokens": 1260
+        },
+        {
+          "relativePath": "src/services/live-betting/types.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/live-betting/types.ts",
+          "sizeBytes": 3187,
+          "estimatedTokens": 797
+        }
+      ],
+      "totalTokens": 33296,
+      "importsFrom": [
+        ".."
+      ],
+      "importedBy": [],
+      "sharedDependencies": []
+    },
+    {
+      "name": "market-cache",
+      "path": "src/services/market-cache",
+      "files": [
+        {
+          "relativePath": "src/services/market-cache/__tests__/cache.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/market-cache/__tests__/cache.test.ts",
+          "sizeBytes": 8151,
+          "estimatedTokens": 2038
+        },
+        {
+          "relativePath": "src/services/market-cache/cache.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/market-cache/cache.ts",
+          "sizeBytes": 6843,
+          "estimatedTokens": 1711
+        },
+        {
+          "relativePath": "src/services/market-cache/index.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/market-cache/index.ts",
+          "sizeBytes": 2298,
+          "estimatedTokens": 575
+        },
+        {
+          "relativePath": "src/services/market-cache/refresh.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/market-cache/refresh.ts",
+          "sizeBytes": 6795,
+          "estimatedTokens": 1699
+        },
+        {
+          "relativePath": "src/services/market-cache/types.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/market-cache/types.ts",
+          "sizeBytes": 621,
+          "estimatedTokens": 156
+        }
+      ],
+      "totalTokens": 6179,
+      "importsFrom": [
+        "..",
+        "database"
+      ],
+      "importedBy": [
+        "bettor-discovery"
+      ],
+      "sharedDependencies": [
+        "core"
+      ]
+    },
+    {
+      "name": "market-intelligence",
+      "path": "src/services/market-intelligence",
+      "files": [
+        {
+          "relativePath": "src/services/market-intelligence/__tests__/correlation-tracker.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/market-intelligence/__tests__/correlation-tracker.test.ts",
+          "sizeBytes": 6451,
+          "estimatedTokens": 1613
+        },
+        {
+          "relativePath": "src/services/market-intelligence/__tests__/event-calendar.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/market-intelligence/__tests__/event-calendar.test.ts",
+          "sizeBytes": 4605,
+          "estimatedTokens": 1152
+        },
+        {
+          "relativePath": "src/services/market-intelligence/__tests__/market-analyzer.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/market-intelligence/__tests__/market-analyzer.test.ts",
+          "sizeBytes": 4649,
+          "estimatedTokens": 1163
+        },
+        {
+          "relativePath": "src/services/market-intelligence/__tests__/mm-detector.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/market-intelligence/__tests__/mm-detector.test.ts",
+          "sizeBytes": 2516,
+          "estimatedTokens": 629
+        },
+        {
+          "relativePath": "src/services/market-intelligence/correlation-tracker.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/market-intelligence/correlation-tracker.ts",
+          "sizeBytes": 6341,
+          "estimatedTokens": 1586
+        },
+        {
+          "relativePath": "src/services/market-intelligence/event-calendar.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/market-intelligence/event-calendar.ts",
+          "sizeBytes": 4538,
+          "estimatedTokens": 1135
+        },
+        {
+          "relativePath": "src/services/market-intelligence/index.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/market-intelligence/index.ts",
+          "sizeBytes": 3504,
+          "estimatedTokens": 876
+        },
+        {
+          "relativePath": "src/services/market-intelligence/liquidity-scorer.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/market-intelligence/liquidity-scorer.ts",
+          "sizeBytes": 3819,
+          "estimatedTokens": 955
+        },
+        {
+          "relativePath": "src/services/market-intelligence/market-analyzer.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/market-intelligence/market-analyzer.ts",
+          "sizeBytes": 4722,
+          "estimatedTokens": 1181
+        },
+        {
+          "relativePath": "src/services/market-intelligence/market-maker-detector.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/market-intelligence/market-maker-detector.ts",
+          "sizeBytes": 4087,
+          "estimatedTokens": 1022
+        },
+        {
+          "relativePath": "src/services/market-intelligence/types.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/market-intelligence/types.ts",
+          "sizeBytes": 1701,
+          "estimatedTokens": 426
+        }
+      ],
+      "totalTokens": 11738,
+      "importsFrom": [
+        ".."
+      ],
+      "importedBy": [],
+      "sharedDependencies": []
+    },
+    {
+      "name": "metrics",
+      "path": "src/services/metrics",
+      "files": [
+        {
+          "relativePath": "src/services/metrics/collectors/api.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/metrics/collectors/api.ts",
+          "sizeBytes": 3874,
+          "estimatedTokens": 969
+        },
+        {
+          "relativePath": "src/services/metrics/collectors/discovery.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/metrics/collectors/discovery.ts",
+          "sizeBytes": 3033,
+          "estimatedTokens": 759
+        },
+        {
+          "relativePath": "src/services/metrics/collectors/events.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/metrics/collectors/events.ts",
+          "sizeBytes": 1424,
+          "estimatedTokens": 356
+        },
+        {
+          "relativePath": "src/services/metrics/collectors/system.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/metrics/collectors/system.ts",
+          "sizeBytes": 2064,
+          "estimatedTokens": 516
+        },
+        {
+          "relativePath": "src/services/metrics/collectors/trading.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/metrics/collectors/trading.ts",
+          "sizeBytes": 6214,
+          "estimatedTokens": 1554
+        },
+        {
+          "relativePath": "src/services/metrics/index.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/metrics/index.ts",
+          "sizeBytes": 1943,
+          "estimatedTokens": 486
+        }
+      ],
+      "totalTokens": 4640,
+      "importsFrom": [],
+      "importedBy": [],
+      "sharedDependencies": []
+    },
+    {
+      "name": "ml-scoring",
+      "path": "src/services/ml-scoring",
+      "files": [
+        {
+          "relativePath": "src/services/ml-scoring/__tests__/evaluation.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/ml-scoring/__tests__/evaluation.test.ts",
+          "sizeBytes": 1881,
+          "estimatedTokens": 471
+        },
+        {
+          "relativePath": "src/services/ml-scoring/__tests__/feature-engineer.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/ml-scoring/__tests__/feature-engineer.test.ts",
+          "sizeBytes": 7918,
+          "estimatedTokens": 1980
+        },
+        {
+          "relativePath": "src/services/ml-scoring/__tests__/feature-selector.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/ml-scoring/__tests__/feature-selector.test.ts",
+          "sizeBytes": 5626,
+          "estimatedTokens": 1407
+        },
+        {
+          "relativePath": "src/services/ml-scoring/__tests__/integration.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/ml-scoring/__tests__/integration.test.ts",
+          "sizeBytes": 8321,
+          "estimatedTokens": 2081
+        },
+        {
+          "relativePath": "src/services/ml-scoring/__tests__/model.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/ml-scoring/__tests__/model.test.ts",
+          "sizeBytes": 9104,
+          "estimatedTokens": 2276
+        },
+        {
+          "relativePath": "src/services/ml-scoring/evaluation.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/ml-scoring/evaluation.ts",
+          "sizeBytes": 4228,
+          "estimatedTokens": 1057
+        },
+        {
+          "relativePath": "src/services/ml-scoring/feature-drift-analyzer.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/ml-scoring/feature-drift-analyzer.ts",
+          "sizeBytes": 3928,
+          "estimatedTokens": 982
+        },
+        {
+          "relativePath": "src/services/ml-scoring/feature-engineer.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/ml-scoring/feature-engineer.ts",
+          "sizeBytes": 19261,
+          "estimatedTokens": 4816
+        },
+        {
+          "relativePath": "src/services/ml-scoring/feature-selector.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/ml-scoring/feature-selector.ts",
+          "sizeBytes": 4955,
+          "estimatedTokens": 1239
+        },
+        {
+          "relativePath": "src/services/ml-scoring/index.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/ml-scoring/index.ts",
+          "sizeBytes": 9307,
+          "estimatedTokens": 2327
+        },
+        {
+          "relativePath": "src/services/ml-scoring/label-generator.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/ml-scoring/label-generator.ts",
+          "sizeBytes": 6415,
+          "estimatedTokens": 1604
+        },
+        {
+          "relativePath": "src/services/ml-scoring/model-store.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/ml-scoring/model-store.ts",
+          "sizeBytes": 4147,
+          "estimatedTokens": 1037
+        },
+        {
+          "relativePath": "src/services/ml-scoring/model.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/ml-scoring/model.ts",
+          "sizeBytes": 9956,
+          "estimatedTokens": 2489
+        },
+        {
+          "relativePath": "src/services/ml-scoring/online-updater.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/ml-scoring/online-updater.ts",
+          "sizeBytes": 7279,
+          "estimatedTokens": 1820
+        },
+        {
+          "relativePath": "src/services/ml-scoring/scorer-bridge.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/ml-scoring/scorer-bridge.ts",
+          "sizeBytes": 5074,
+          "estimatedTokens": 1269
+        },
+        {
+          "relativePath": "src/services/ml-scoring/training-pipeline.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/ml-scoring/training-pipeline.ts",
+          "sizeBytes": 16653,
+          "estimatedTokens": 4164
+        },
+        {
+          "relativePath": "src/services/ml-scoring/types.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/ml-scoring/types.ts",
+          "sizeBytes": 1820,
+          "estimatedTokens": 455
+        }
+      ],
+      "totalTokens": 31474,
+      "importsFrom": [
+        ".."
+      ],
+      "importedBy": [
+        "bettor-discovery"
+      ],
+      "sharedDependencies": []
+    },
+    {
+      "name": "optimizer",
+      "path": "src/services/optimizer",
+      "files": [
+        {
+          "relativePath": "src/services/optimizer/__tests__/parameter-space.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/optimizer/__tests__/parameter-space.test.ts",
+          "sizeBytes": 1117,
+          "estimatedTokens": 280
+        },
+        {
+          "relativePath": "src/services/optimizer/__tests__/scorer.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/optimizer/__tests__/scorer.test.ts",
+          "sizeBytes": 2972,
+          "estimatedTokens": 743
+        },
+        {
+          "relativePath": "src/services/optimizer/grid-search.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/optimizer/grid-search.ts",
+          "sizeBytes": 7379,
+          "estimatedTokens": 1845
+        },
+        {
+          "relativePath": "src/services/optimizer/index.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/optimizer/index.ts",
+          "sizeBytes": 14510,
+          "estimatedTokens": 3628
+        },
+        {
+          "relativePath": "src/services/optimizer/parameter-space.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/optimizer/parameter-space.ts",
+          "sizeBytes": 7045,
+          "estimatedTokens": 1762
+        },
+        {
+          "relativePath": "src/services/optimizer/report.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/optimizer/report.ts",
+          "sizeBytes": 1885,
+          "estimatedTokens": 472
+        },
+        {
+          "relativePath": "src/services/optimizer/scorer.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/optimizer/scorer.ts",
+          "sizeBytes": 4155,
+          "estimatedTokens": 1039
+        },
+        {
+          "relativePath": "src/services/optimizer/types.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/optimizer/types.ts",
+          "sizeBytes": 2369,
+          "estimatedTokens": 593
+        }
+      ],
+      "totalTokens": 10362,
+      "importsFrom": [
+        ".."
+      ],
+      "importedBy": [],
+      "sharedDependencies": []
+    },
+    {
+      "name": "order-intelligence",
+      "path": "src/services/order-intelligence",
+      "files": [
+        {
+          "relativePath": "src/services/order-intelligence/__tests__/entry-optimizer.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/order-intelligence/__tests__/entry-optimizer.test.ts",
+          "sizeBytes": 3982,
+          "estimatedTokens": 996
+        },
+        {
+          "relativePath": "src/services/order-intelligence/__tests__/fill-simulator.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/order-intelligence/__tests__/fill-simulator.test.ts",
+          "sizeBytes": 3105,
+          "estimatedTokens": 777
+        },
+        {
+          "relativePath": "src/services/order-intelligence/__tests__/order-tracker.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/order-intelligence/__tests__/order-tracker.test.ts",
+          "sizeBytes": 2537,
+          "estimatedTokens": 635
+        },
+        {
+          "relativePath": "src/services/order-intelligence/__tests__/orderbook-analyzer.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/order-intelligence/__tests__/orderbook-analyzer.test.ts",
+          "sizeBytes": 6582,
+          "estimatedTokens": 1646
+        },
+        {
+          "relativePath": "src/services/order-intelligence/entry-optimizer.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/order-intelligence/entry-optimizer.ts",
+          "sizeBytes": 5834,
+          "estimatedTokens": 1459
+        },
+        {
+          "relativePath": "src/services/order-intelligence/fill-simulator.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/order-intelligence/fill-simulator.ts",
+          "sizeBytes": 3772,
+          "estimatedTokens": 943
+        },
+        {
+          "relativePath": "src/services/order-intelligence/index.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/order-intelligence/index.ts",
+          "sizeBytes": 331,
+          "estimatedTokens": 83
+        },
+        {
+          "relativePath": "src/services/order-intelligence/order-tracker.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/order-intelligence/order-tracker.ts",
+          "sizeBytes": 3702,
+          "estimatedTokens": 926
+        },
+        {
+          "relativePath": "src/services/order-intelligence/orderbook-analyzer.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/order-intelligence/orderbook-analyzer.ts",
+          "sizeBytes": 6136,
+          "estimatedTokens": 1534
+        },
+        {
+          "relativePath": "src/services/order-intelligence/types.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/order-intelligence/types.ts",
+          "sizeBytes": 1246,
+          "estimatedTokens": 312
+        },
+        {
+          "relativePath": "src/services/order-intelligence/volatility-tracker.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/order-intelligence/volatility-tracker.ts",
+          "sizeBytes": 3266,
+          "estimatedTokens": 817
+        }
+      ],
+      "totalTokens": 10128,
+      "importsFrom": [
+        ".."
+      ],
+      "importedBy": [],
+      "sharedDependencies": []
+    },
+    {
+      "name": "paper-betting",
+      "path": "src/services/paper-betting",
+      "files": [
+        {
+          "relativePath": "src/services/paper-betting/__tests__/executor.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/paper-betting/__tests__/executor.test.ts",
+          "sizeBytes": 8655,
+          "estimatedTokens": 2164
+        },
+        {
+          "relativePath": "src/services/paper-betting/__tests__/portfolio.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/paper-betting/__tests__/portfolio.test.ts",
+          "sizeBytes": 16162,
+          "estimatedTokens": 4041
+        },
+        {
+          "relativePath": "src/services/paper-betting/executor.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/paper-betting/executor.ts",
+          "sizeBytes": 12372,
+          "estimatedTokens": 3093
+        },
+        {
+          "relativePath": "src/services/paper-betting/index.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/paper-betting/index.ts",
+          "sizeBytes": 3211,
+          "estimatedTokens": 803
+        },
+        {
+          "relativePath": "src/services/paper-betting/market-resolver.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/paper-betting/market-resolver.ts",
+          "sizeBytes": 3899,
+          "estimatedTokens": 975
+        },
+        {
+          "relativePath": "src/services/paper-betting/portfolio.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/paper-betting/portfolio.ts",
+          "sizeBytes": 28803,
+          "estimatedTokens": 7201
+        },
+        {
+          "relativePath": "src/services/paper-betting/types.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/paper-betting/types.ts",
+          "sizeBytes": 1587,
+          "estimatedTokens": 397
+        }
+      ],
+      "totalTokens": 18674,
+      "importsFrom": [
+        ".."
+      ],
+      "importedBy": [],
+      "sharedDependencies": []
+    },
+    {
+      "name": "polymarket-client",
+      "path": "src/services/polymarket-client",
+      "files": [
+        {
+          "relativePath": "src/services/polymarket-client/__tests__/client-core.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/polymarket-client/__tests__/client-core.test.ts",
+          "sizeBytes": 9497,
+          "estimatedTokens": 2375
+        },
+        {
+          "relativePath": "src/services/polymarket-client/__tests__/positions.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/polymarket-client/__tests__/positions.test.ts",
+          "sizeBytes": 3408,
+          "estimatedTokens": 852
+        },
+        {
+          "relativePath": "src/services/polymarket-client/approval-boot.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/polymarket-client/approval-boot.ts",
+          "sizeBytes": 6563,
+          "estimatedTokens": 1641
+        },
+        {
+          "relativePath": "src/services/polymarket-client/approvals.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/polymarket-client/approvals.ts",
+          "sizeBytes": 4571,
+          "estimatedTokens": 1143
+        },
+        {
+          "relativePath": "src/services/polymarket-client/auth.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/polymarket-client/auth.ts",
+          "sizeBytes": 2605,
+          "estimatedTokens": 652
+        },
+        {
+          "relativePath": "src/services/polymarket-client/clob-client.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/polymarket-client/clob-client.ts",
+          "sizeBytes": 7233,
+          "estimatedTokens": 1809
+        },
+        {
+          "relativePath": "src/services/polymarket-client/gamma-client.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/polymarket-client/gamma-client.ts",
+          "sizeBytes": 4128,
+          "estimatedTokens": 1032
+        },
+        {
+          "relativePath": "src/services/polymarket-client/gas-check.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/polymarket-client/gas-check.ts",
+          "sizeBytes": 1193,
+          "estimatedTokens": 299
+        },
+        {
+          "relativePath": "src/services/polymarket-client/index.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/polymarket-client/index.ts",
+          "sizeBytes": 9527,
+          "estimatedTokens": 2382
+        },
+        {
+          "relativePath": "src/services/polymarket-client/signer.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/polymarket-client/signer.ts",
+          "sizeBytes": 2276,
+          "estimatedTokens": 569
+        },
+        {
+          "relativePath": "src/services/polymarket-client/types.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/polymarket-client/types.ts",
+          "sizeBytes": 4220,
+          "estimatedTokens": 1055
+        },
+        {
+          "relativePath": "src/services/polymarket-client/usdc-balance.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/polymarket-client/usdc-balance.ts",
+          "sizeBytes": 1682,
+          "estimatedTokens": 421
+        }
+      ],
+      "totalTokens": 14230,
+      "importsFrom": [
+        ".."
+      ],
+      "importedBy": [
+        "bettor-discovery"
+      ],
+      "sharedDependencies": [
+        "types"
+      ]
+    },
+    {
+      "name": "portfolio-manager",
+      "path": "src/services/portfolio-manager",
+      "files": [
+        {
+          "relativePath": "src/services/portfolio-manager/__tests__/analytics.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/portfolio-manager/__tests__/analytics.test.ts",
+          "sizeBytes": 2592,
+          "estimatedTokens": 648
+        },
+        {
+          "relativePath": "src/services/portfolio-manager/__tests__/correlation-manager.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/portfolio-manager/__tests__/correlation-manager.test.ts",
+          "sizeBytes": 5301,
+          "estimatedTokens": 1326
+        },
+        {
+          "relativePath": "src/services/portfolio-manager/__tests__/diversification.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/portfolio-manager/__tests__/diversification.test.ts",
+          "sizeBytes": 4995,
+          "estimatedTokens": 1249
+        },
+        {
+          "relativePath": "src/services/portfolio-manager/__tests__/drawdown.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/portfolio-manager/__tests__/drawdown.test.ts",
+          "sizeBytes": 4092,
+          "estimatedTokens": 1023
+        },
+        {
+          "relativePath": "src/services/portfolio-manager/__tests__/kelly.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/portfolio-manager/__tests__/kelly.test.ts",
+          "sizeBytes": 4771,
+          "estimatedTokens": 1193
+        },
+        {
+          "relativePath": "src/services/portfolio-manager/__tests__/rebalancer.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/portfolio-manager/__tests__/rebalancer.test.ts",
+          "sizeBytes": 5791,
+          "estimatedTokens": 1448
+        },
+        {
+          "relativePath": "src/services/portfolio-manager/correlation-manager.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/portfolio-manager/correlation-manager.ts",
+          "sizeBytes": 4996,
+          "estimatedTokens": 1249
+        },
+        {
+          "relativePath": "src/services/portfolio-manager/diversification-types.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/portfolio-manager/diversification-types.ts",
+          "sizeBytes": 822,
+          "estimatedTokens": 206
+        },
+        {
+          "relativePath": "src/services/portfolio-manager/diversification.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/portfolio-manager/diversification.ts",
+          "sizeBytes": 6519,
+          "estimatedTokens": 1630
+        },
+        {
+          "relativePath": "src/services/portfolio-manager/drawdown-protection.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/portfolio-manager/drawdown-protection.ts",
+          "sizeBytes": 5012,
+          "estimatedTokens": 1253
+        },
+        {
+          "relativePath": "src/services/portfolio-manager/index.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/portfolio-manager/index.ts",
+          "sizeBytes": 6160,
+          "estimatedTokens": 1540
+        },
+        {
+          "relativePath": "src/services/portfolio-manager/kelly-sizer.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/portfolio-manager/kelly-sizer.ts",
+          "sizeBytes": 3255,
+          "estimatedTokens": 814
+        },
+        {
+          "relativePath": "src/services/portfolio-manager/portfolio-analytics.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/portfolio-manager/portfolio-analytics.ts",
+          "sizeBytes": 4045,
+          "estimatedTokens": 1012
+        },
+        {
+          "relativePath": "src/services/portfolio-manager/rebalancer.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/portfolio-manager/rebalancer.ts",
+          "sizeBytes": 7386,
+          "estimatedTokens": 1847
+        },
+        {
+          "relativePath": "src/services/portfolio-manager/types.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/portfolio-manager/types.ts",
+          "sizeBytes": 1106,
+          "estimatedTokens": 277
+        }
+      ],
+      "totalTokens": 16715,
+      "importsFrom": [
+        ".."
+      ],
+      "importedBy": [],
+      "sharedDependencies": []
+    },
+    {
+      "name": "position-monitor",
+      "path": "src/services/position-monitor",
+      "files": [
+        {
+          "relativePath": "src/services/position-monitor/__tests__/dynamic-sl-tp.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/position-monitor/__tests__/dynamic-sl-tp.test.ts",
+          "sizeBytes": 3654,
+          "estimatedTokens": 914
+        },
+        {
+          "relativePath": "src/services/position-monitor/__tests__/exit-rules.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/position-monitor/__tests__/exit-rules.test.ts",
+          "sizeBytes": 18313,
+          "estimatedTokens": 4579
+        },
+        {
+          "relativePath": "src/services/position-monitor/__tests__/monitor.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/position-monitor/__tests__/monitor.test.ts",
+          "sizeBytes": 12913,
+          "estimatedTokens": 3229
+        },
+        {
+          "relativePath": "src/services/position-monitor/__tests__/price-tracker.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/position-monitor/__tests__/price-tracker.test.ts",
+          "sizeBytes": 4955,
+          "estimatedTokens": 1239
+        },
+        {
+          "relativePath": "src/services/position-monitor/__tests__/scale-out.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/position-monitor/__tests__/scale-out.test.ts",
+          "sizeBytes": 2881,
+          "estimatedTokens": 721
+        },
+        {
+          "relativePath": "src/services/position-monitor/__tests__/trailing-stop.test.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/position-monitor/__tests__/trailing-stop.test.ts",
+          "sizeBytes": 4019,
+          "estimatedTokens": 1005
+        },
+        {
+          "relativePath": "src/services/position-monitor/dynamic-sl-tp.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/position-monitor/dynamic-sl-tp.ts",
+          "sizeBytes": 3139,
+          "estimatedTokens": 785
+        },
+        {
+          "relativePath": "src/services/position-monitor/exit-rules.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/position-monitor/exit-rules.ts",
+          "sizeBytes": 9749,
+          "estimatedTokens": 2438
+        },
+        {
+          "relativePath": "src/services/position-monitor/index.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/position-monitor/index.ts",
+          "sizeBytes": 3044,
+          "estimatedTokens": 761
+        },
+        {
+          "relativePath": "src/services/position-monitor/monitor.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/position-monitor/monitor.ts",
+          "sizeBytes": 32125,
+          "estimatedTokens": 8032
+        },
+        {
+          "relativePath": "src/services/position-monitor/price-tracker.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/position-monitor/price-tracker.ts",
+          "sizeBytes": 6269,
+          "estimatedTokens": 1568
+        },
+        {
+          "relativePath": "src/services/position-monitor/scale-out.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/position-monitor/scale-out.ts",
+          "sizeBytes": 3912,
+          "estimatedTokens": 978
+        },
+        {
+          "relativePath": "src/services/position-monitor/trailing-stop.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/position-monitor/trailing-stop.ts",
+          "sizeBytes": 4547,
+          "estimatedTokens": 1137
+        },
+        {
+          "relativePath": "src/services/position-monitor/types.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/position-monitor/types.ts",
+          "sizeBytes": 2062,
+          "estimatedTokens": 516
+        }
+      ],
+      "totalTokens": 27902,
+      "importsFrom": [
+        ".."
+      ],
+      "importedBy": [],
+      "sharedDependencies": []
+    },
+    {
+      "name": "redeemer",
+      "path": "src/services/redeemer",
+      "files": [
+        {
+          "relativePath": "src/services/redeemer/executor.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/redeemer/executor.ts",
+          "sizeBytes": 3599,
+          "estimatedTokens": 900
+        },
+        {
+          "relativePath": "src/services/redeemer/index.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/redeemer/index.ts",
+          "sizeBytes": 4070,
+          "estimatedTokens": 1018
+        },
+        {
+          "relativePath": "src/services/redeemer/scanner.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/redeemer/scanner.ts",
+          "sizeBytes": 1459,
+          "estimatedTokens": 365
+        },
+        {
+          "relativePath": "src/services/redeemer/types.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/redeemer/types.ts",
+          "sizeBytes": 545,
+          "estimatedTokens": 137
+        }
+      ],
+      "totalTokens": 2420,
+      "importsFrom": [],
+      "importedBy": [],
+      "sharedDependencies": []
+    },
+    {
+      "name": "telegram",
+      "path": "src/services/telegram",
+      "files": [
+        {
+          "relativePath": "src/services/telegram/bot.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/telegram/bot.ts",
+          "sizeBytes": 17305,
+          "estimatedTokens": 4327
+        },
+        {
+          "relativePath": "src/services/telegram/daily-summary.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/telegram/daily-summary.ts",
+          "sizeBytes": 2342,
+          "estimatedTokens": 586
+        },
+        {
+          "relativePath": "src/services/telegram/formatter.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/telegram/formatter.ts",
+          "sizeBytes": 18403,
+          "estimatedTokens": 4601
+        },
+        {
+          "relativePath": "src/services/telegram/index.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/telegram/index.ts",
+          "sizeBytes": 2212,
+          "estimatedTokens": 553
+        },
+        {
+          "relativePath": "src/services/telegram/types.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/telegram/types.ts",
+          "sizeBytes": 471,
+          "estimatedTokens": 118
+        }
+      ],
+      "totalTokens": 10185,
+      "importsFrom": [],
+      "importedBy": [],
+      "sharedDependencies": []
+    },
+    {
+      "name": "telegram-bot",
+      "path": "src/services/telegram-bot",
+      "files": [],
+      "totalTokens": 0,
+      "importsFrom": [],
+      "importedBy": [],
+      "sharedDependencies": []
+    },
+    {
+      "name": "wallet-manager",
+      "path": "src/services/wallet-manager",
+      "files": [
+        {
+          "relativePath": "src/services/wallet-manager/index.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/wallet-manager/index.ts",
+          "sizeBytes": 5840,
+          "estimatedTokens": 1460
+        },
+        {
+          "relativePath": "src/services/wallet-manager/manager.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/wallet-manager/manager.ts",
+          "sizeBytes": 11147,
+          "estimatedTokens": 2787
+        },
+        {
+          "relativePath": "src/services/wallet-manager/selector.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/wallet-manager/selector.ts",
+          "sizeBytes": 2508,
+          "estimatedTokens": 627
+        },
+        {
+          "relativePath": "src/services/wallet-manager/types.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/services/wallet-manager/types.ts",
+          "sizeBytes": 1228,
+          "estimatedTokens": 307
+        }
+      ],
+      "totalTokens": 5181,
+      "importsFrom": [],
+      "importedBy": [],
+      "sharedDependencies": []
+    },
+    {
+      "name": "tui",
+      "path": "src/tui",
+      "files": [
+        {
+          "relativePath": "src/tui/api.ts",
+          "absolutePath": "/home/grapho/projects/polybot/src/tui/api.ts",
+          "sizeBytes": 8257,
+          "estimatedTokens": 2065
+        },
+        {
+          "relativePath": "src/tui/app.tsx",
+          "absolutePath": "/home/grapho/projects/polybot/src/tui/app.tsx",
+          "sizeBytes": 4087,
+          "estimatedTokens": 1022
+        },
+        {
+          "relativePath": "src/tui/components/footer.tsx",
+          "absolutePath": "/home/grapho/projects/polybot/src/tui/components/footer.tsx",
+          "sizeBytes": 765,
+          "estimatedTokens": 192
+        },
+        {
+          "relativePath": "src/tui/components/header.tsx",
+          "absolutePath": "/home/grapho/projects/polybot/src/tui/components/header.tsx",
+          "sizeBytes": 1388,
+          "estimatedTokens": 347
+        },
+        {
+          "relativePath": "src/tui/index.tsx",
+          "absolutePath": "/home/grapho/projects/polybot/src/tui/index.tsx",
+          "sizeBytes": 259,
+          "estimatedTokens": 65
+        },
+        {
+          "relativePath": "src/tui/tabs/activity.tsx",
+          "absolutePath": "/home/grapho/projects/polybot/src/tui/tabs/activity.tsx",
+          "sizeBytes": 3242,
+          "estimatedTokens": 811
+        },
+        {
+          "relativePath": "src/tui/tabs/bettors.tsx",
+          "absolutePath": "/home/grapho/projects/polybot/src/tui/tabs/bettors.tsx",
+          "sizeBytes": 2456,
+          "estimatedTokens": 614
+        },
+        {
+          "relativePath": "src/tui/tabs/controls.tsx",
+          "absolutePath": "/home/grapho/projects/polybot/src/tui/tabs/controls.tsx",
+          "sizeBytes": 6706,
+          "estimatedTokens": 1677
+        },
+        {
+          "relativePath": "src/tui/tabs/overview.tsx",
+          "absolutePath": "/home/grapho/projects/polybot/src/tui/tabs/overview.tsx",
+          "sizeBytes": 2300,
+          "estimatedTokens": 575
+        },
+        {
+          "relativePath": "src/tui/tabs/positions.tsx",
+          "absolutePath": "/home/grapho/projects/polybot/src/tui/tabs/positions.tsx",
+          "sizeBytes": 2324,
+          "estimatedTokens": 581
+        },
+        {
+          "relativePath": "src/tui/tabs/rejected-signals.tsx",
+          "absolutePath": "/home/grapho/projects/polybot/src/tui/tabs/rejected-signals.tsx",
+          "sizeBytes": 2144,
+          "estimatedTokens": 536
+        },
+        {
+          "relativePath": "src/tui/tabs/system.tsx",
+          "absolutePath": "/home/grapho/projects/polybot/src/tui/tabs/system.tsx",
+          "sizeBytes": 2987,
+          "estimatedTokens": 747
+        }
+      ],
+      "totalTokens": 9232,
+      "importsFrom": [],
+      "importedBy": [],
+      "sharedDependencies": []
+    }
+  ],
+  "shared": {
+    "core": [
+      {
+        "relativePath": "core/__tests__/alerting.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/core/__tests__/alerting.test.ts",
+        "sizeBytes": 5220,
+        "estimatedTokens": 1305
+      },
+      {
+        "relativePath": "core/__tests__/circuit-breaker.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/core/__tests__/circuit-breaker.test.ts",
+        "sizeBytes": 9964,
+        "estimatedTokens": 2491
+      },
+      {
+        "relativePath": "core/__tests__/db-maintenance.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/core/__tests__/db-maintenance.test.ts",
+        "sizeBytes": 5953,
+        "estimatedTokens": 1489
+      },
+      {
+        "relativePath": "core/__tests__/dynamic-risk.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/core/__tests__/dynamic-risk.test.ts",
+        "sizeBytes": 8237,
+        "estimatedTokens": 2060
+      },
+      {
+        "relativePath": "core/__tests__/event-bus.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/core/__tests__/event-bus.test.ts",
+        "sizeBytes": 7362,
+        "estimatedTokens": 1841
+      },
+      {
+        "relativePath": "core/__tests__/feature-flags.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/core/__tests__/feature-flags.test.ts",
+        "sizeBytes": 2462,
+        "estimatedTokens": 616
+      },
+      {
+        "relativePath": "core/__tests__/rate-limiter.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/core/__tests__/rate-limiter.test.ts",
+        "sizeBytes": 5868,
+        "estimatedTokens": 1467
+      },
+      {
+        "relativePath": "core/__tests__/rpc-manager.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/core/__tests__/rpc-manager.test.ts",
+        "sizeBytes": 5326,
+        "estimatedTokens": 1332
+      },
+      {
+        "relativePath": "core/alerting.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/core/alerting.ts",
+        "sizeBytes": 8511,
+        "estimatedTokens": 2128
+      },
+      {
+        "relativePath": "core/audit-log.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/core/audit-log.ts",
+        "sizeBytes": 1139,
+        "estimatedTokens": 285
+      },
+      {
+        "relativePath": "core/circuit-breaker.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/core/circuit-breaker.ts",
+        "sizeBytes": 2657,
+        "estimatedTokens": 665
+      },
+      {
+        "relativePath": "core/config.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/core/config.ts",
+        "sizeBytes": 13592,
+        "estimatedTokens": 3398
+      },
+      {
+        "relativePath": "core/correlation.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/core/correlation.ts",
+        "sizeBytes": 433,
+        "estimatedTokens": 109
+      },
+      {
+        "relativePath": "core/database.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/core/database.ts",
+        "sizeBytes": 973,
+        "estimatedTokens": 244
+      },
+      {
+        "relativePath": "core/db-maintenance.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/core/db-maintenance.ts",
+        "sizeBytes": 6958,
+        "estimatedTokens": 1740
+      },
+      {
+        "relativePath": "core/dynamic-risk.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/core/dynamic-risk.ts",
+        "sizeBytes": 16313,
+        "estimatedTokens": 4079
+      },
+      {
+        "relativePath": "core/event-bus.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/core/event-bus.ts",
+        "sizeBytes": 3905,
+        "estimatedTokens": 977
+      },
+      {
+        "relativePath": "core/feature-flags.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/core/feature-flags.ts",
+        "sizeBytes": 3090,
+        "estimatedTokens": 773
+      },
+      {
+        "relativePath": "core/health.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/core/health.ts",
+        "sizeBytes": 1289,
+        "estimatedTokens": 323
+      },
+      {
+        "relativePath": "core/logger.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/core/logger.ts",
+        "sizeBytes": 453,
+        "estimatedTokens": 114
+      },
+      {
+        "relativePath": "core/rate-limiter.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/core/rate-limiter.ts",
+        "sizeBytes": 3589,
+        "estimatedTokens": 898
+      },
+      {
+        "relativePath": "core/rpc-manager.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/core/rpc-manager.ts",
+        "sizeBytes": 6347,
+        "estimatedTokens": 1587
+      },
+      {
+        "relativePath": "core/telemetry.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/core/telemetry.ts",
+        "sizeBytes": 2416,
+        "estimatedTokens": 604
+      }
+    ],
+    "types": [
+      {
+        "relativePath": "types/global.d.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/types/global.d.ts",
+        "sizeBytes": 2404,
+        "estimatedTokens": 601
+      },
+      {
+        "relativePath": "types/ws.d.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/types/ws.d.ts",
+        "sizeBytes": 1226,
+        "estimatedTokens": 307
+      }
+    ],
+    "tests": [
+      {
+        "relativePath": "__tests__/activity-poller.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/__tests__/activity-poller.test.ts",
+        "sizeBytes": 8438,
+        "estimatedTokens": 2110
+      },
+      {
+        "relativePath": "__tests__/approval-boot.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/__tests__/approval-boot.test.ts",
+        "sizeBytes": 8051,
+        "estimatedTokens": 2013
+      },
+      {
+        "relativePath": "__tests__/backtesting-routes.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/__tests__/backtesting-routes.test.ts",
+        "sizeBytes": 8572,
+        "estimatedTokens": 2143
+      },
+      {
+        "relativePath": "__tests__/backtesting-simulator.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/__tests__/backtesting-simulator.test.ts",
+        "sizeBytes": 6639,
+        "estimatedTokens": 1660
+      },
+      {
+        "relativePath": "__tests__/config.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/__tests__/config.test.ts",
+        "sizeBytes": 7309,
+        "estimatedTokens": 1828
+      },
+      {
+        "relativePath": "__tests__/dashboard.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/__tests__/dashboard.test.ts",
+        "sizeBytes": 5878,
+        "estimatedTokens": 1470
+      },
+      {
+        "relativePath": "__tests__/fixtures/factories.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/__tests__/fixtures/factories.ts",
+        "sizeBytes": 6510,
+        "estimatedTokens": 1628
+      },
+      {
+        "relativePath": "__tests__/fixtures/index.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/__tests__/fixtures/index.ts",
+        "sizeBytes": 60,
+        "estimatedTokens": 15
+      },
+      {
+        "relativePath": "__tests__/fixtures/mocks.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/__tests__/fixtures/mocks.ts",
+        "sizeBytes": 3753,
+        "estimatedTokens": 939
+      },
+      {
+        "relativePath": "__tests__/leaderboard-scraper.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/__tests__/leaderboard-scraper.test.ts",
+        "sizeBytes": 9392,
+        "estimatedTokens": 2348
+      },
+      {
+        "relativePath": "__tests__/market-resolver.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/__tests__/market-resolver.test.ts",
+        "sizeBytes": 10240,
+        "estimatedTokens": 2560
+      },
+      {
+        "relativePath": "__tests__/online-updater.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/__tests__/online-updater.test.ts",
+        "sizeBytes": 2481,
+        "estimatedTokens": 621
+      },
+      {
+        "relativePath": "__tests__/pending-queue-worker.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/__tests__/pending-queue-worker.test.ts",
+        "sizeBytes": 2327,
+        "estimatedTokens": 582
+      },
+      {
+        "relativePath": "__tests__/pending-queue.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/__tests__/pending-queue.test.ts",
+        "sizeBytes": 8386,
+        "estimatedTokens": 2097
+      },
+      {
+        "relativePath": "__tests__/redeemer.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/__tests__/redeemer.test.ts",
+        "sizeBytes": 13339,
+        "estimatedTokens": 3335
+      },
+      {
+        "relativePath": "__tests__/retry-classifier.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/__tests__/retry-classifier.test.ts",
+        "sizeBytes": 7405,
+        "estimatedTokens": 1852
+      },
+      {
+        "relativePath": "__tests__/risk-windows.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/__tests__/risk-windows.test.ts",
+        "sizeBytes": 7752,
+        "estimatedTokens": 1938
+      },
+      {
+        "relativePath": "__tests__/telegram-enhance.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/__tests__/telegram-enhance.test.ts",
+        "sizeBytes": 9667,
+        "estimatedTokens": 2417
+      },
+      {
+        "relativePath": "__tests__/telegram-formatter.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/__tests__/telegram-formatter.test.ts",
+        "sizeBytes": 6131,
+        "estimatedTokens": 1533
+      },
+      {
+        "relativePath": "__tests__/training-pipeline.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/__tests__/training-pipeline.test.ts",
+        "sizeBytes": 2652,
+        "estimatedTokens": 663
+      },
+      {
+        "relativePath": "core/__tests__/alerting.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/core/__tests__/alerting.test.ts",
+        "sizeBytes": 5220,
+        "estimatedTokens": 1305
+      },
+      {
+        "relativePath": "core/__tests__/circuit-breaker.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/core/__tests__/circuit-breaker.test.ts",
+        "sizeBytes": 9964,
+        "estimatedTokens": 2491
+      },
+      {
+        "relativePath": "core/__tests__/db-maintenance.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/core/__tests__/db-maintenance.test.ts",
+        "sizeBytes": 5953,
+        "estimatedTokens": 1489
+      },
+      {
+        "relativePath": "core/__tests__/dynamic-risk.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/core/__tests__/dynamic-risk.test.ts",
+        "sizeBytes": 8237,
+        "estimatedTokens": 2060
+      },
+      {
+        "relativePath": "core/__tests__/event-bus.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/core/__tests__/event-bus.test.ts",
+        "sizeBytes": 7362,
+        "estimatedTokens": 1841
+      },
+      {
+        "relativePath": "core/__tests__/feature-flags.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/core/__tests__/feature-flags.test.ts",
+        "sizeBytes": 2462,
+        "estimatedTokens": 616
+      },
+      {
+        "relativePath": "core/__tests__/rate-limiter.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/core/__tests__/rate-limiter.test.ts",
+        "sizeBytes": 5868,
+        "estimatedTokens": 1467
+      },
+      {
+        "relativePath": "core/__tests__/rpc-manager.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/core/__tests__/rpc-manager.test.ts",
+        "sizeBytes": 5326,
+        "estimatedTokens": 1332
+      },
+      {
+        "relativePath": "services/activity-tracker/__tests__/bet-detector.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/activity-tracker/__tests__/bet-detector.test.ts",
+        "sizeBytes": 7256,
+        "estimatedTokens": 1814
+      },
+      {
+        "relativePath": "services/activity-tracker/__tests__/ws-monitor.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/activity-tracker/__tests__/ws-monitor.test.ts",
+        "sizeBytes": 3613,
+        "estimatedTokens": 904
+      },
+      {
+        "relativePath": "services/allocation-manager/__tests__/allocator.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/allocation-manager/__tests__/allocator.test.ts",
+        "sizeBytes": 10445,
+        "estimatedTokens": 2612
+      },
+      {
+        "relativePath": "services/allocation-manager/__tests__/auto-unpause.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/allocation-manager/__tests__/auto-unpause.test.ts",
+        "sizeBytes": 4769,
+        "estimatedTokens": 1193
+      },
+      {
+        "relativePath": "services/allocation-manager/__tests__/risk-guard.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/allocation-manager/__tests__/risk-guard.test.ts",
+        "sizeBytes": 7834,
+        "estimatedTokens": 1959
+      },
+      {
+        "relativePath": "services/allocation-manager/__tests__/rotation.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/allocation-manager/__tests__/rotation.test.ts",
+        "sizeBytes": 4719,
+        "estimatedTokens": 1180
+      },
+      {
+        "relativePath": "services/anomaly-detector/__tests__/detectors.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/anomaly-detector/__tests__/detectors.test.ts",
+        "sizeBytes": 11303,
+        "estimatedTokens": 2826
+      },
+      {
+        "relativePath": "services/auto-calibrator/__tests__/engine.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/auto-calibrator/__tests__/engine.test.ts",
+        "sizeBytes": 2399,
+        "estimatedTokens": 600
+      },
+      {
+        "relativePath": "services/bettor-discovery/__tests__/bettor-classifier.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/bettor-discovery/__tests__/bettor-classifier.test.ts",
+        "sizeBytes": 3154,
+        "estimatedTokens": 789
+      },
+      {
+        "relativePath": "services/bettor-discovery/__tests__/bettor-scorer.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/bettor-discovery/__tests__/bettor-scorer.test.ts",
+        "sizeBytes": 24037,
+        "estimatedTokens": 6010
+      },
+      {
+        "relativePath": "services/bettor-discovery/__tests__/market-scanner.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/bettor-discovery/__tests__/market-scanner.test.ts",
+        "sizeBytes": 3502,
+        "estimatedTokens": 876
+      },
+      {
+        "relativePath": "services/bettor-discovery/__tests__/outcome-matching.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/bettor-discovery/__tests__/outcome-matching.test.ts",
+        "sizeBytes": 1475,
+        "estimatedTokens": 369
+      },
+      {
+        "relativePath": "services/bettor-discovery/__tests__/positions-scoring.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/bettor-discovery/__tests__/positions-scoring.test.ts",
+        "sizeBytes": 1532,
+        "estimatedTokens": 383
+      },
+      {
+        "relativePath": "services/copy-betting/__tests__/enrichment.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/copy-betting/__tests__/enrichment.test.ts",
+        "sizeBytes": 9880,
+        "estimatedTokens": 2470
+      },
+      {
+        "relativePath": "services/copy-betting/__tests__/signal-handler.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/copy-betting/__tests__/signal-handler.test.ts",
+        "sizeBytes": 11581,
+        "estimatedTokens": 2896
+      },
+      {
+        "relativePath": "services/copy-betting/__tests__/validation.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/copy-betting/__tests__/validation.test.ts",
+        "sizeBytes": 28364,
+        "estimatedTokens": 7091
+      },
+      {
+        "relativePath": "services/cost-tracker/__tests__/cost-tracker.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/cost-tracker/__tests__/cost-tracker.test.ts",
+        "sizeBytes": 10201,
+        "estimatedTokens": 2551
+      },
+      {
+        "relativePath": "services/live-betting/__tests__/kill-switch-auto-reset.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/live-betting/__tests__/kill-switch-auto-reset.test.ts",
+        "sizeBytes": 2937,
+        "estimatedTokens": 735
+      },
+      {
+        "relativePath": "services/live-betting/__tests__/order-executor.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/live-betting/__tests__/order-executor.test.ts",
+        "sizeBytes": 11670,
+        "estimatedTokens": 2918
+      },
+      {
+        "relativePath": "services/live-betting/__tests__/reconciliation.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/live-betting/__tests__/reconciliation.test.ts",
+        "sizeBytes": 4404,
+        "estimatedTokens": 1101
+      },
+      {
+        "relativePath": "services/live-betting/__tests__/shadow-mode.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/live-betting/__tests__/shadow-mode.test.ts",
+        "sizeBytes": 11295,
+        "estimatedTokens": 2824
+      },
+      {
+        "relativePath": "services/market-cache/__tests__/cache.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/market-cache/__tests__/cache.test.ts",
+        "sizeBytes": 8151,
+        "estimatedTokens": 2038
+      },
+      {
+        "relativePath": "services/market-intelligence/__tests__/correlation-tracker.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/market-intelligence/__tests__/correlation-tracker.test.ts",
+        "sizeBytes": 6451,
+        "estimatedTokens": 1613
+      },
+      {
+        "relativePath": "services/market-intelligence/__tests__/event-calendar.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/market-intelligence/__tests__/event-calendar.test.ts",
+        "sizeBytes": 4605,
+        "estimatedTokens": 1152
+      },
+      {
+        "relativePath": "services/market-intelligence/__tests__/market-analyzer.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/market-intelligence/__tests__/market-analyzer.test.ts",
+        "sizeBytes": 4649,
+        "estimatedTokens": 1163
+      },
+      {
+        "relativePath": "services/market-intelligence/__tests__/mm-detector.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/market-intelligence/__tests__/mm-detector.test.ts",
+        "sizeBytes": 2516,
+        "estimatedTokens": 629
+      },
+      {
+        "relativePath": "services/ml-scoring/__tests__/evaluation.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/ml-scoring/__tests__/evaluation.test.ts",
+        "sizeBytes": 1881,
+        "estimatedTokens": 471
+      },
+      {
+        "relativePath": "services/ml-scoring/__tests__/feature-engineer.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/ml-scoring/__tests__/feature-engineer.test.ts",
+        "sizeBytes": 7918,
+        "estimatedTokens": 1980
+      },
+      {
+        "relativePath": "services/ml-scoring/__tests__/feature-selector.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/ml-scoring/__tests__/feature-selector.test.ts",
+        "sizeBytes": 5626,
+        "estimatedTokens": 1407
+      },
+      {
+        "relativePath": "services/ml-scoring/__tests__/integration.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/ml-scoring/__tests__/integration.test.ts",
+        "sizeBytes": 8321,
+        "estimatedTokens": 2081
+      },
+      {
+        "relativePath": "services/ml-scoring/__tests__/model.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/ml-scoring/__tests__/model.test.ts",
+        "sizeBytes": 9104,
+        "estimatedTokens": 2276
+      },
+      {
+        "relativePath": "services/optimizer/__tests__/parameter-space.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/optimizer/__tests__/parameter-space.test.ts",
+        "sizeBytes": 1117,
+        "estimatedTokens": 280
+      },
+      {
+        "relativePath": "services/optimizer/__tests__/scorer.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/optimizer/__tests__/scorer.test.ts",
+        "sizeBytes": 2972,
+        "estimatedTokens": 743
+      },
+      {
+        "relativePath": "services/order-intelligence/__tests__/entry-optimizer.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/order-intelligence/__tests__/entry-optimizer.test.ts",
+        "sizeBytes": 3982,
+        "estimatedTokens": 996
+      },
+      {
+        "relativePath": "services/order-intelligence/__tests__/fill-simulator.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/order-intelligence/__tests__/fill-simulator.test.ts",
+        "sizeBytes": 3105,
+        "estimatedTokens": 777
+      },
+      {
+        "relativePath": "services/order-intelligence/__tests__/order-tracker.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/order-intelligence/__tests__/order-tracker.test.ts",
+        "sizeBytes": 2537,
+        "estimatedTokens": 635
+      },
+      {
+        "relativePath": "services/order-intelligence/__tests__/orderbook-analyzer.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/order-intelligence/__tests__/orderbook-analyzer.test.ts",
+        "sizeBytes": 6582,
+        "estimatedTokens": 1646
+      },
+      {
+        "relativePath": "services/paper-betting/__tests__/executor.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/paper-betting/__tests__/executor.test.ts",
+        "sizeBytes": 8655,
+        "estimatedTokens": 2164
+      },
+      {
+        "relativePath": "services/paper-betting/__tests__/portfolio.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/paper-betting/__tests__/portfolio.test.ts",
+        "sizeBytes": 16162,
+        "estimatedTokens": 4041
+      },
+      {
+        "relativePath": "services/polymarket-client/__tests__/client-core.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/polymarket-client/__tests__/client-core.test.ts",
+        "sizeBytes": 9497,
+        "estimatedTokens": 2375
+      },
+      {
+        "relativePath": "services/polymarket-client/__tests__/positions.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/polymarket-client/__tests__/positions.test.ts",
+        "sizeBytes": 3408,
+        "estimatedTokens": 852
+      },
+      {
+        "relativePath": "services/portfolio-manager/__tests__/analytics.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/portfolio-manager/__tests__/analytics.test.ts",
+        "sizeBytes": 2592,
+        "estimatedTokens": 648
+      },
+      {
+        "relativePath": "services/portfolio-manager/__tests__/correlation-manager.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/portfolio-manager/__tests__/correlation-manager.test.ts",
+        "sizeBytes": 5301,
+        "estimatedTokens": 1326
+      },
+      {
+        "relativePath": "services/portfolio-manager/__tests__/diversification.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/portfolio-manager/__tests__/diversification.test.ts",
+        "sizeBytes": 4995,
+        "estimatedTokens": 1249
+      },
+      {
+        "relativePath": "services/portfolio-manager/__tests__/drawdown.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/portfolio-manager/__tests__/drawdown.test.ts",
+        "sizeBytes": 4092,
+        "estimatedTokens": 1023
+      },
+      {
+        "relativePath": "services/portfolio-manager/__tests__/kelly.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/portfolio-manager/__tests__/kelly.test.ts",
+        "sizeBytes": 4771,
+        "estimatedTokens": 1193
+      },
+      {
+        "relativePath": "services/portfolio-manager/__tests__/rebalancer.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/portfolio-manager/__tests__/rebalancer.test.ts",
+        "sizeBytes": 5791,
+        "estimatedTokens": 1448
+      },
+      {
+        "relativePath": "services/position-monitor/__tests__/dynamic-sl-tp.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/position-monitor/__tests__/dynamic-sl-tp.test.ts",
+        "sizeBytes": 3654,
+        "estimatedTokens": 914
+      },
+      {
+        "relativePath": "services/position-monitor/__tests__/exit-rules.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/position-monitor/__tests__/exit-rules.test.ts",
+        "sizeBytes": 18313,
+        "estimatedTokens": 4579
+      },
+      {
+        "relativePath": "services/position-monitor/__tests__/monitor.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/position-monitor/__tests__/monitor.test.ts",
+        "sizeBytes": 12913,
+        "estimatedTokens": 3229
+      },
+      {
+        "relativePath": "services/position-monitor/__tests__/price-tracker.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/position-monitor/__tests__/price-tracker.test.ts",
+        "sizeBytes": 4955,
+        "estimatedTokens": 1239
+      },
+      {
+        "relativePath": "services/position-monitor/__tests__/scale-out.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/position-monitor/__tests__/scale-out.test.ts",
+        "sizeBytes": 2881,
+        "estimatedTokens": 721
+      },
+      {
+        "relativePath": "services/position-monitor/__tests__/trailing-stop.test.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/services/position-monitor/__tests__/trailing-stop.test.ts",
+        "sizeBytes": 4019,
+        "estimatedTokens": 1005
+      }
+    ],
+    "scripts": [
+      {
+        "relativePath": "scripts/analyze-rejected-signals.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/scripts/analyze-rejected-signals.ts",
+        "sizeBytes": 5252,
+        "estimatedTokens": 1313
+      },
+      {
+        "relativePath": "scripts/resolve-pending-labels.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/scripts/resolve-pending-labels.ts",
+        "sizeBytes": 828,
+        "estimatedTokens": 207
+      },
+      {
+        "relativePath": "scripts/verify-rejected-outcomes.ts",
+        "absolutePath": "/home/grapho/projects/polybot/src/scripts/verify-rejected-outcomes.ts",
+        "sizeBytes": 4055,
+        "estimatedTokens": 1014
+      }
+    ],
+    "totalTokens": 172314
+  },
+  "generatedAt": "2026-05-14T14:31:15.285Z"
+}
