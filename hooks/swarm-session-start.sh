@@ -27,13 +27,28 @@ if [ -d "$REQUESTS_DIR" ]; then
             resp_count=$(find "$RESPONSES_DIR" -name "${task_id}*-result.md" | wc -l)
         fi
         
-        # Read expected subtask count
+        # Read expected subtask count (minimum 1)
         expected=1
         if command -v jq >/dev/null 2>&1; then
             expected=$(jq '.subtasks | length // 1' "$req" 2>/dev/null || echo 1)
+            if [ "$expected" -lt 1 ]; then
+                expected=1
+            fi
         fi
         
-        if [ "$resp_count" -ge "$expected" ]; then
+        # Check if already integrated (integration plan exists)
+        already_integrated=false
+        if [ -f "$BUS_DIR/integration-plans/${task_id}-integration.md" ]; then
+            already_integrated=true
+        fi
+        # Also check task- prefix variants
+        if [ -f "$BUS_DIR/integration-plans/${task_id#*-}-integration.md" ]; then
+            already_integrated=true
+        fi
+        
+        if [ "$already_integrated" = true ]; then
+            : # Already integrated, don't count
+        elif [ "$resp_count" -ge "$expected" ]; then
             READY_COUNT=$((READY_COUNT + 1))
         else
             PENDING_COUNT=$((PENDING_COUNT + 1))
