@@ -231,7 +231,7 @@ function finalizeChunk(chunk: ContextChunk): ContextChunk {
 }
 
 /** Detect if the user wants a broad analysis of the entire project */
-function isBroadAnalysisTask(request: string): boolean {
+export function isBroadAnalysisTask(request: string): boolean {
   const analysisKeywords = [
     'analisis', 'análisis', 'analysis', 'audit', 'auditar', 'review',
     'complete', 'completo', 'full', 'entire', 'todo el proyecto',
