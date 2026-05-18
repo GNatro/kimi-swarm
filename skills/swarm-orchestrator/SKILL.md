@@ -235,6 +235,52 @@ If `~/.kimi/state/orchestration-pending.json` exists with `status: pending`:
 2. Do NOT proceed with new work until resolved
 3. If user insists on override, warn and log in ASSUMPTIONS.md
 
+## 🤖 Auto-Detection Rules
+
+When the user does NOT use a trigger prefix, the engine auto-detects the mode.
+
+### Pipeline
+
+```
+User Request → Intent Classifier → Scope Estimator → Risk Classifier → Router → Decision
+```
+
+### Decision Matrix
+
+| Detection | Mode | When |
+|---|---|---|
+| taskType === 'exploration' | normal | Read-only analysis |
+| complexity ≤ 2 AND files ≤ 1 | light | Trivial (<2 min) |
+| P×I ≥ 13 | challenge | High risk (auth, security) |
+| files > 3 OR services > 1 | plan-only | Multi-file task |
+| Otherwise | normal | Simple single-file |
+
+### Override Behavior
+
+- User writes trigger → trigger wins ALWAYS
+- No trigger → auto-detection runs
+- Auto-detection shows explanation + confidence %
+- User can override by adding trigger prefix
+
+### Example Outputs
+
+**Auto-light:**
+```
+🤖 No trigger detected. Running auto-detection...
+⚡ Auto-detected trivial task. Using light mode.
+   Task: "fix typo in README" | Estimated: <2 min | Files: 1
+   Confidence: 85%
+   Say 'plan only:' to see full plan instead.
+```
+
+**Auto-challenge:**
+```
+🤖 No trigger detected. Running auto-detection...
+🔍 High risk detected (P×I = 15). Running challenge review first.
+   Confidence: 80%
+   After review, plan-only mode will be used.
+```
+
 ## Token Budget Reference
 
 | Project | Total Source Tokens | Your Budget | Worker Budget |
