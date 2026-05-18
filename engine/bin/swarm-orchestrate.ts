@@ -66,10 +66,19 @@ async function main() {
     case 'light': {
       const result = await orchestrate(trigger.cleanRequest, { light: true });
       console.log('\n⚡ LIGHT MODE — Swarm skipped');
-      console.log('   V1 (Build): manual check required');
-      console.log('   V3 (Safety): manual check required');
-      console.log('   V5 (Spec): manual check required');
-      console.log(`   Task: ${result.brief.objective}`);
+      console.log(`Task: ${result.brief.objective}`);
+      console.log('\nRunning V1+V3+V5 checks...\n');
+      
+      const { runLightChecks } = await import('../src/trigger-light.js');
+      const projectRoot = process.cwd();
+      const checks = await runLightChecks(projectRoot);
+      
+      for (const check of checks.checks) {
+        const icon = check.passed ? '✅' : '❌';
+        console.log(`${icon} ${check.check}: ${check.details}`);
+      }
+      
+      console.log(`\n${checks.recommendation}`);
       break;
     }
 
