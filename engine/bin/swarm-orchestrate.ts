@@ -47,6 +47,7 @@ async function main() {
         process.exit(1);
       }
       console.log(`✅ Plan approved${trigger.scope ? ` (scope: ${trigger.scope})` : ''}`);
+      process.env.SWARM_PROJECT_ID = pending.projectId;
       const result = await orchestrate(pending.request, { approved: true });
       console.log(`\n🎯 Task ${result.brief.taskId} ready for delegation`);
       console.log(`   ${result.prompts.length} worker(s) to launch`);

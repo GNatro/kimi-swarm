@@ -181,7 +181,7 @@ export const DEFAULT_CONFIG: EngineConfig = {
   chunkSafetyMargin: 20_000,
   partitionThreshold: 120_000,
   projectRoot: process.cwd(),
-  busRoot: `/home/grapho/shared-context/default`,
+  busRoot: process.env.SWARM_BUS_ROOT || `/tmp/kimi-swarm-bus/default`,
   projectId: 'default',
   language: 'typescript',
   servicePatterns: ['src/**/*'],

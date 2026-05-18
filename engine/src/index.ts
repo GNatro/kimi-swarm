@@ -119,6 +119,7 @@ export async function orchestrate(
     savePending({
       taskId: brief.taskId,
       request: userRequest,
+      projectId: projectId,
       partitionJson: JSON.stringify(partition),
       briefJson: JSON.stringify(brief),
       status: 'pending',

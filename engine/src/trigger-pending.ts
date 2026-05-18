@@ -11,6 +11,7 @@ import { join } from 'path';
 export interface PendingState {
   taskId: string;
   request: string;
+  projectId: string;
   partitionJson: string;
   briefJson: string;
   status: 'pending' | 'approved' | 'rejected';

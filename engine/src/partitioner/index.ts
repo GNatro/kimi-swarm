@@ -289,10 +289,12 @@ function estimateProbability(brief: TaskBrief): number {
   // - Many files touched
   // - Cross-cutting (multiple services)
   // - No tests mentioned
+  // - Auth/security (complex, error-prone)
   let score = 2; // baseline
   if (brief.requiresPartitioning) score += 1;
   if ((brief.contextChunks?.length || 0) > 2) score += 1;
   if (brief.taskType === 'cross-cutting') score += 1;
+  if (brief.objective.toLowerCase().includes('auth') || brief.objective.toLowerCase().includes('security')) score += 1;
   return Math.min(5, score);
 }
 
@@ -303,7 +305,7 @@ function estimateImpact(brief: TaskBrief): number {
   // - API contract changes
   let score = 2; // baseline
   const obj = brief.objective.toLowerCase();
-  if (obj.includes('auth') || obj.includes('security')) score += 2;
+  if (obj.includes('auth') || obj.includes('security')) score += 3;
   if (obj.includes('database') || obj.includes('schema')) score += 1;
   if (obj.includes('api') || obj.includes('endpoint')) score += 1;
   return Math.min(5, score);
