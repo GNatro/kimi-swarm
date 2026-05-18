@@ -17,9 +17,9 @@ import {
   createPlan,
   getActivePlan,
 } from '../src/anti-drift/plan-graph.js';
-import { appendRecord } from '../src/anti-drift/causal-registry.js';
+import { appendRecord, hashPrompt } from '../src/anti-drift/causal-registry.js';
 import { createChecklist, addItem } from '../src/anti-drift/checklist-manager.js';
-import { hashPrompt, nowIso } from '../src/anti-drift/types.js';
+import { nowIso } from '../src/anti-drift/types.js';
 
 const request = process.argv.slice(2).join(' ');
 

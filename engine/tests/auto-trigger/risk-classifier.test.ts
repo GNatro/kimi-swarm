@@ -63,7 +63,7 @@ describe('calculateRiskAndComplexity', () => {
       keywords: ['auth', 'login'],
       scope: makeScope(2),
     });
-    expect(r.risk.impact).toBe(5); // 2 base + 3 auth
+    expect(r.risk.impact).toBe(4); // 2 base + 2 auth (bug-fix gets reduced weight)
   });
 
   it('payment keywords increase impact', () => {
