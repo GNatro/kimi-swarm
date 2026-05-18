@@ -16,6 +16,8 @@ ALWAYS consult this skill when:
 4. You find yourself reading more than 10 files to understand the scope
 5. **You have done more than 8 turns of work without delegating**
 6. **The emergency-delegate flag exists** (see Auto-Split section)
+7. **User uses an elite trigger** (`plan only:`, `light:`, `challenge:`, `audit`)
+   → The trigger router handles routing; this skill provides context on when each applies
 
 ## Your Identity
 
@@ -169,6 +171,69 @@ Agent(subagent_type="coder", prompt="Fix failing tests for [service]. Errors: ..
 4. **NEVER skip running tests after integration**
 5. **NEVER continue working directly when emergency-delegate.json exists**
 6. **NEVER exceed 15 turns of direct work** without evaluating delegation
+
+## 🎛️ Trigger Usage Guide
+
+### When to use each trigger
+
+| Situation | Trigger | Why |
+|---|---|---|
+| New feature, >3 files | `plan only:` | See plan before committing resources |
+| Typo fix, 1 file | `light:` | Skip overhead, execute directly |
+| Security change | `challenge:` | Force adversarial review |
+| Something feels wrong | `audit` | Self-check last 10 turns |
+| Plan reviewed, looks good | `[APPROVED]` | Execute approved plan |
+| Plan reviewed, needs changes | `REJECT — <reason>` | Cancel and replan |
+
+### How to delegate with triggers
+
+**Plan + Approve workflow:**
+```
+1. User: "plan only: implement auth"
+2. Agent: cd ~/kimi-swarm/engine && npx tsx bin/swarm-orchestrate.ts "plan only: implement auth"
+3. Engine: Shows plan preview
+4. Agent: Presents plan to user
+5. User: "[APPROVED]" or "REJECT — reason"
+6. Agent: cd ~/kimi-swarm/engine && npx tsx bin/swarm-orchestrate.ts "[APPROVED]"
+7. Engine: Writes to bus, generates prompts
+8. Agent: Delegates workers
+```
+
+**Light workflow:**
+```
+1. User: "light: fix typo in README"
+2. Agent: cd ~/kimi-swarm/engine && npx tsx bin/swarm-orchestrate.ts "light: fix typo in README"
+3. Engine: Returns light brief (no partitioning)
+4. Agent: Executes directly (V1+V3+V5)
+```
+
+**Challenge workflow:**
+```
+1. User: "challenge: why 15 files?"
+2. Agent: cd ~/kimi-swarm/engine && npx tsx bin/swarm-orchestrate.ts "challenge: why 15 files?"
+3. Engine: Runs 6-Lens review
+4. Agent: Presents ≥400 word analysis with evidence
+```
+
+### Trigger Detection in Skill
+
+If the user's message starts with a trigger, do NOT re-emit it. The engine's CLI entry point (`bin/swarm-orchestrate.ts`) already parses triggers. Just pass the user's message verbatim:
+
+```bash
+cd ~/kimi-swarm/engine && npx tsx bin/swarm-orchestrate.ts "$USER_MESSAGE"
+```
+
+The engine will:
+- Detect the trigger
+- Route to appropriate mode
+- Return formatted output
+
+### Emergency: Plan pending but user didn't approve
+
+If `~/.kimi/state/orchestration-pending.json` exists with `status: pending`:
+1. Remind user: "There's a pending plan. Say [APPROVED] or REJECT first."
+2. Do NOT proceed with new work until resolved
+3. If user insists on override, warn and log in ASSUMPTIONS.md
 
 ## Token Budget Reference
 
