@@ -7,6 +7,8 @@ import { estimateScope } from './scope-estimator.js';
 import { calculateRiskAndComplexity } from './risk-classifier.js';
 import { buildProjectMap } from '../indexer/index.js';
 import { getProject } from '../project/registry.js';
+import { appendRecord, hashPrompt } from '../anti-drift/causal-registry.js';
+import { nowIso } from '../anti-drift/types.js';
 
 export type AutoMode = 'light' | 'plan-only' | 'challenge' | 'normal';
 
@@ -63,6 +65,67 @@ export async function runAutoDetection(
 
   // Step 5: Decision tree
   const decision = makeDecision(intent.taskType, risk, complexity, scope, rawRequest);
+
+  // Anti-Drift v2.0: Record auto-trigger decision
+  try {
+    appendRecord({
+      recordId: `rec-auto-${Date.now()}`,
+      turnNumber: 0, // Will be updated by orchestrator
+      timestamp: nowIso(),
+      userPrompt: rawRequest,
+      userPromptHash: hashPrompt(rawRequest),
+      preState: {
+        activePlanId: null,
+        activePhaseId: null,
+        checklistState: { checklistId: 'chk-empty', items: [], version: 0 },
+        filesModified: [],
+        pendingDecisions: [],
+      },
+      decision: {
+        type: decision.mode === 'light' ? 'modify-file' :
+              decision.mode === 'plan-only' ? 'create-plan' :
+              decision.mode === 'challenge' ? 'ask-clarification' : 'continue-plan',
+        description: decision.explanation,
+        affectedPlanIds: [],
+        affectedFiles: [],
+        triggerUsed: `auto-${decision.mode}`,
+      },
+      postState: {
+        activePlanId: null,
+        activePhaseId: null,
+        checklistState: { checklistId: 'chk-empty', items: [], version: 0 },
+        filesModified: [],
+        newArtifacts: [],
+        resolvedDecisions: [],
+        pendingDecisions: [],
+      },
+      reasoning: {
+        summary: decision.reason,
+        keyAssumptions: [`Task type: ${intent.taskType}`],
+        risksConsidered: [`Risk score: ${risk.riskScore}`],
+        alternativesRejected: [],
+        confidence: decision.confidence,
+      },
+      causalLink: {
+        previousRecordId: null,
+        linkType: 'continues',
+        deltaDescription: 'Auto-detected trigger',
+        diffHash: '0000',
+      },
+      planContext: {
+        planId: null,
+        planType: null,
+        phaseId: null,
+        parentPlanId: null,
+        parentPhaseId: null,
+        depth: 0,
+      },
+      tags: ['auto-detected', intent.taskType, decision.mode],
+      tokensConsumed: 0,
+    });
+  } catch {
+    // Silently fail — recording is best-effort
+  }
 
   return {
     ...decision,

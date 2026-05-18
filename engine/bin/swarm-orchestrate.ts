@@ -11,6 +11,15 @@ import { parseTrigger } from '../src/trigger-router.js';
 import { loadPending, markApproved, clearPending } from '../src/trigger-pending.js';
 import { runAutoDetection } from '../src/auto-trigger/router.js';
 import { resolveProjectId } from '../src/project/resolver.js';
+import {
+  loadPlanGraph,
+  savePlanGraph,
+  createPlan,
+  getActivePlan,
+} from '../src/anti-drift/plan-graph.js';
+import { appendRecord } from '../src/anti-drift/causal-registry.js';
+import { createChecklist, addItem } from '../src/anti-drift/checklist-manager.js';
+import { hashPrompt, nowIso } from '../src/anti-drift/types.js';
 
 const request = process.argv.slice(2).join(' ');
 
@@ -53,6 +62,32 @@ async function main() {
   } else {
     console.log(`👤 User trigger detected: ${trigger.type}`);
     console.log('   Auto-detection skipped (manual override).\n');
+  }
+
+  // ── Anti-Drift v2.0: Ensure active plan exists ──────────────────────
+  const graph = loadPlanGraph();
+  let activePlan = getActivePlan(graph);
+  if (!activePlan && effectiveTrigger.type !== 'reject' && effectiveTrigger.type !== 'audit') {
+    // Create a main plan for this request
+    const plan = createPlan(graph, {
+      planType: 'main',
+      title: request.slice(0, 60),
+      description: request,
+      status: 'active',
+      phases: [
+        { phaseId: 'p1', title: 'Execution', status: 'active', order: 1, spawnedSidePlanIds: [], recordIds: [], entryCriteria: [], exitCriteria: [] },
+      ],
+      currentPhaseIndex: 0,
+      checklistId: `chk-${Date.now()}`,
+      tags: [effectiveTrigger.type === 'none' ? 'auto' : 'manual'],
+      estimatedTurns: 5,
+      actualTurns: 0,
+    });
+    const checklist = createChecklist(plan.planId, plan.title);
+    addItem(checklist, 'Execute task', 'auto');
+    savePlanGraph(graph);
+    activePlan = plan;
+    console.log(`📋 Created plan: ${plan.title}`);
   }
 
   // ── EXECUTION SWITCH ────────────────────────────────────────────────
@@ -164,6 +199,67 @@ async function main() {
         console.log(`   ~/shared-context/${result.brief.project}/bus/prompts/${p.subtaskId}.md`);
       }
       console.log(`\nNext step: Read prompt file and execute Agent(subagent_type="${result.prompts[0]?.workerType || 'coder'}")`);
+    }
+  }
+
+  // Anti-Drift v2.0: Record execution decision
+  if (activePlan) {
+    try {
+      appendRecord({
+        recordId: `rec-exec-${Date.now()}`,
+        turnNumber: 0,
+        timestamp: nowIso(),
+        userPrompt: request,
+        userPromptHash: hashPrompt(request),
+        preState: {
+          activePlanId: activePlan.planId,
+          activePhaseId: activePlan.phases[activePlan.currentPhaseIndex]?.phaseId ?? null,
+          checklistState: { checklistId: activePlan.checklistId, items: [], version: 0 },
+          filesModified: [],
+          pendingDecisions: [],
+        },
+        decision: {
+          type: 'continue-plan',
+          description: `Executed via ${effectiveTrigger.type} trigger`,
+          affectedPlanIds: [activePlan.planId],
+          affectedFiles: [],
+          triggerUsed: effectiveTrigger.type,
+        },
+        postState: {
+          activePlanId: activePlan.planId,
+          activePhaseId: activePlan.phases[activePlan.currentPhaseIndex]?.phaseId ?? null,
+          checklistState: { checklistId: activePlan.checklistId, items: [], version: 0 },
+          filesModified: [],
+          newArtifacts: [],
+          resolvedDecisions: [],
+          pendingDecisions: [],
+        },
+        reasoning: {
+          summary: `Orchestrated task with ${effectiveTrigger.type} trigger`,
+          keyAssumptions: [],
+          risksConsidered: [],
+          alternativesRejected: [],
+          confidence: 0.9,
+        },
+        causalLink: {
+          previousRecordId: null,
+          linkType: 'continues',
+          deltaDescription: 'Orchestrator execution',
+          diffHash: '0000',
+        },
+        planContext: {
+          planId: activePlan.planId,
+          planType: activePlan.planType,
+          phaseId: activePlan.phases[activePlan.currentPhaseIndex]?.phaseId ?? null,
+          parentPlanId: activePlan.parentPlanId ?? null,
+          parentPhaseId: activePlan.parentPhaseId ?? null,
+          depth: activePlan.depth,
+        },
+        tags: ['orchestrate', effectiveTrigger.type],
+        tokensConsumed: 0,
+      });
+    } catch {
+      // Recording is best-effort
     }
   }
 }

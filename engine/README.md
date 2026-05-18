@@ -132,8 +132,52 @@ Result:  Would span live-betting, copy-betting, paper-betting, position-monitor
 
 ---
 
+## Anti-Drift v2.0 (Causal Memory + Plan Graph)
+
+The engine now includes a causal memory system to prevent context drift in long sessions.
+
+### Modules
+
+| Module | File | Purpose |
+|--------|------|---------|
+| `types` | `src/anti-drift/types.ts` | Core interfaces and constants |
+| `causal-registry` | `src/anti-drift/causal-registry.ts` | Append-only JSONL record storage |
+| `plan-graph` | `src/anti-drift/plan-graph.ts` | DAG for Main Plans + Side Plans |
+| `checklist-manager` | `src/anti-drift/checklist-manager.ts` | Living checklists with inheritance |
+| `re-reader` | `src/anti-drift/re-reader.ts` | Intelligent context re-reading |
+| `rollup-generator` | `src/anti-drift/rollup-generator.ts` | Periodic summarization |
+
+### API
+
+```typescript
+import { antiDrift } from './src/anti-drift';
+
+// Plan graph
+const graph = antiDrift.createPlanGraph();
+const plan = antiDrift.createPlan(graph, { planType: 'main', title: 'Feature X', ... });
+antiDrift.savePlanGraph(graph);
+
+// Causal records
+antiDrift.appendRecord({ recordId: 'rec-001', turnNumber: 1, ... });
+
+// Context re-read
+const context = antiDrift.reReadContext(currentTurn, activePlanId);
+```
+
+### Data Storage
+
+| Data | Path |
+|------|------|
+| Causal records | `~/.kimi/state/causal-registry.jsonl` |
+| Plan graph | `~/.kimi/state/plan-graph-index.json` |
+| Checklists | `~/.kimi/state/checklists/{id}.json` |
+| Rollups | `~/.kimi/state/rollups/rollup-{start}-{end}.json` |
+
+---
+
 ## Next Steps (Roadmap)
 
+- [x] **Anti-Drift v2.0**: Causal memory + plan graph system
 - [ ] **Context stripping**: Ensure workers don't inherit full parent context
 - [ ] **Auto-launch**: Call `Agent()` directly instead of copy-paste
 - [ ] **Result integration**: Auto-read responses and apply changes
@@ -143,4 +187,4 @@ Result:  Would span live-betting, copy-betting, paper-betting, position-monitor
 
 ---
 
-*Version: 0.1.0-polybot-mvp*
+*Version: 0.1.0-polybot-mvp + Anti-Drift v2.0*
