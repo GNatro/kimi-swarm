@@ -1,4 +1,7 @@
 #!/usr/bin/env tsx
+// DEPRECATED: Use `src/indexer/plugins/typescript.ts` instead.
+// This file is kept for backwards compatibility during migration.
+
 /**
  * Polybot Context Map Builder
  * Scans the polybot project and generates a static map for partitioning decisions.

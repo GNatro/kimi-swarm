@@ -56,6 +56,17 @@ if [ -d "$REQUESTS_DIR" ]; then
     done
 fi
 
+# Show orchestration rules banner
+echo ""
+echo "╔══════════════════════════════════════════════════════════════════╗"
+echo "║  🐝 SWARM ORCHESTRATOR — Critical Rules                        ║"
+echo "╠══════════════════════════════════════════════════════════════════╣"
+echo "║  1. Partition BEFORE coding (>3 files → Swarm Engine)          ║"
+echo "║  2. Delegate workers in PARALLEL (NOT sequentially)            ║"
+echo "║  3. Max 10 work-turns direct → then DELEGATE mandatory         ║"
+echo "╚══════════════════════════════════════════════════════════════════╝"
+echo ""
+
 # Output status
 echo ""
 echo "🐝 SWARM BUS STATUS"

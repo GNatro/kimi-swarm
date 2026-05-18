@@ -1,6 +1,6 @@
 /**
  * Kimi Swarm Engine — Core Types
- * Version: 0.1.0-polybot-mvp
+ * Version: 0.3.0-project-agnostic
  */
 
 /** Represents a single file in the project with token estimation */
@@ -137,16 +137,43 @@ export interface EngineConfig {
   chunkSafetyMargin: number;
   // Max tokens before we force partitioning
   partitionThreshold: number;
-  // Polybot project root
-  polybotRoot: string;
+  // Project root (agnostic, was polybotRoot)
+  projectRoot: string;
   // Where to write task files
   busRoot: string;
+  // Project identifier
+  projectId: string;
+  // Detected language
+  language: string;
+  // Service patterns for this language
+  servicePatterns: string[];
+
 }
 
 export const DEFAULT_CONFIG: EngineConfig = {
   maxChunkTokens: 150_000,
   chunkSafetyMargin: 20_000,
   partitionThreshold: 120_000,
-  polybotRoot: '/home/grapho/projects/polybot',
-  busRoot: '/home/grapho/shared-context/polybot',
+  projectRoot: process.cwd(),
+  busRoot: `/home/grapho/shared-context/default`,
+  projectId: 'default',
+  language: 'typescript',
+  servicePatterns: ['src/**/*'],
 };
+
+// Re-export Soul & Swarm types
+export type {
+  SoulManifest,
+  SoulFileTouch,
+  SoulExportOptions,
+  SoulExportResult,
+  SoulImportOptions,
+  SoulImportResult,
+  SoulPreview,
+  SoulRegistry,
+  FileLock,
+  LockConflict,
+  LockAcquireResult,
+  V1V8Result,
+  EliteConstitution,
+} from '../soul/types.js';

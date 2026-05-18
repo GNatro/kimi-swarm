@@ -5,17 +5,19 @@
  */
 
 import { partitionTask, buildTaskBrief, printPartition } from './index.js';
+import { resolveProjectId } from '../project/resolver.js';
 
 const request = process.argv.slice(2).join(' ') || 'Fix bug in position monitor exit rules';
 
 async function main() {
   console.log(`🔍 Analyzing request: "${request}"\n`);
 
-  const partition = await partitionTask({ userRequest: request });
+  const projectId = resolveProjectId();
+  const partition = await partitionTask({ userRequest: request, projectId });
   console.log(printPartition(partition));
 
   if (partition.needsPartitioning) {
-    const brief = buildTaskBrief({ userRequest: request }, partition);
+    const brief = buildTaskBrief({ userRequest: request, projectId }, partition);
     console.log(`\n📋 Task Brief Generated:`);
     console.log(`  Task ID: ${brief.taskId}`);
     console.log(`  Type: ${brief.taskType}`);

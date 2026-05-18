@@ -6,6 +6,7 @@
 import { writeFile, readFile, mkdir } from 'fs/promises';
 import { join } from 'path';
 import { DEFAULT_CONFIG } from '../types/index.js';
+import { getProject } from '../project/registry.js';
 
 export interface Checkpoint {
   checkpointId: string;
@@ -21,13 +22,15 @@ export interface Checkpoint {
 }
 
 function getCheckpointDir(project: string): string {
-  return join(DEFAULT_CONFIG.busRoot, 'checkpoints');
+  const config = getProject(project);
+  const busRoot = config?.busRoot ?? DEFAULT_CONFIG.busRoot;
+  return join(busRoot, 'checkpoints');
 }
 
 /** Save a checkpoint */
 export async function saveCheckpoint(
   checkpoint: Checkpoint,
-  project: string = 'polybot'
+  project: string
 ): Promise<void> {
   const dir = getCheckpointDir(project);
   await mkdir(dir, { recursive: true });
@@ -38,7 +41,7 @@ export async function saveCheckpoint(
 /** Load the latest checkpoint for a subtask */
 export async function loadLatestCheckpoint(
   subtaskId: string,
-  project: string = 'polybot'
+  project: string
 ): Promise<Checkpoint | null> {
   try {
     const dir = getCheckpointDir(project);
@@ -53,7 +56,7 @@ export async function loadLatestCheckpoint(
 export async function heartbeat(
   subtaskId: string,
   step: string,
-  project: string = 'polybot'
+  project: string
 ): Promise<void> {
   const checkpoint: Checkpoint = {
     checkpointId: `hb-${Date.now()}`,
@@ -75,8 +78,10 @@ export async function heartbeat(
 }
 
 /** Generate checkpoint instructions for worker prompts */
-export function getCheckpointInstructions(subtaskId: string, project: string = 'polybot'): string {
-  const checkpointDir = join(DEFAULT_CONFIG.busRoot, 'checkpoints');
+export function getCheckpointInstructions(subtaskId: string, project: string): string {
+  const config = getProject(project);
+  const busRoot = config?.busRoot ?? DEFAULT_CONFIG.busRoot;
+  const checkpointDir = join(busRoot, 'checkpoints');
   return `
 ## Checkpoint System (CRITICAL)
 

@@ -26,7 +26,8 @@ export function generateWorkerPrompt(
   subtask: Subtask,
   config: EngineConfig = DEFAULT_CONFIG
 ): WorkerPrompt {
-  const projectRoot = config.polybotRoot;
+  const projectRoot = config.projectRoot;
+  if (!projectRoot) throw new Error('projectRoot is required');
   const busDir = join(config.busRoot, 'bus');
   const resultPath = join(busDir, 'responses', `${subtask.subtaskId}-result.md`);
 

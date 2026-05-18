@@ -14,6 +14,8 @@ import type {
 } from '../types/index.js';
 import { DEFAULT_CONFIG } from '../types/index.js';
 import { sumTokens, formatTokens } from '../utils/token-estimator.js';
+import { buildProjectMap } from '../indexer/index.js';
+import { resolveProjectId } from '../project/resolver.js';
 
 export { DEFAULT_CONFIG };
 
@@ -28,6 +30,8 @@ export interface PartitionRequest {
   taskTypeHint?: TaskType;
   // If true, only include explicitly mentioned services (strict mode)
   strictScope?: boolean;
+  // Project identifier
+  projectId: string;
 }
 
 /** Result of partitioning */
@@ -40,12 +44,9 @@ export interface PartitionResult {
   workerRecommendations: string[];
 }
 
-/** Load the polybot map */
-export async function loadProjectMap(): Promise<ProjectMap> {
-  const { default: map } = await import('../polybot-context/map.json', {
-    assert: { type: 'json' },
-  });
-  return map as ProjectMap;
+/** Load project map — generic project map loader */
+export async function loadProjectMap(projectId: string): Promise<ProjectMap> {
+  return await buildProjectMap(projectId);
 }
 
 /** Identify which services are relevant to a request */
@@ -248,7 +249,7 @@ export async function partitionTask(
   request: PartitionRequest,
   config: EngineConfig = DEFAULT_CONFIG
 ): Promise<PartitionResult> {
-  const map = await loadProjectMap();
+  const map = await loadProjectMap(request.projectId);
   let relevant = identifyRelevantServices(map, request);
 
   // If no specific services found but task looks like broad analysis,
@@ -309,7 +310,7 @@ export function buildTaskBrief(
 
   return {
     taskId,
-    project: 'polybot',
+    project: config.projectId,
     taskType: guessTaskType(request.userRequest),
     objective: request.userRequest,
     userRequest: request.userRequest,
