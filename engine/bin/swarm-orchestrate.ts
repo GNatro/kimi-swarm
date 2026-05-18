@@ -63,6 +63,20 @@ async function main() {
       break;
     }
 
+    case 'challenge': {
+      const { runChallenge } = await import('../src/challenge-engine.js');
+      const result = await runChallenge(trigger.subject || 'current plan');
+      
+      console.log(result.summary);
+      console.log(`\n📊 Word count: ${result.wordCount}`);
+      console.log(`🎯 Overall risk: ${result.overallRisk}/25`);
+      
+      if (result.wordCount < 400) {
+        console.log('⚠️  Warning: Output <400 words. Expanding analysis...');
+      }
+      break;
+    }
+
     case 'light': {
       const result = await orchestrate(trigger.cleanRequest, { light: true });
       console.log('\n⚡ LIGHT MODE — Swarm skipped');

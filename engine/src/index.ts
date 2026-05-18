@@ -103,6 +103,12 @@ export async function orchestrate(
   const brief = buildTaskBrief({ userRequest, projectId }, partition);
   console.log(printRiskScore(brief));
 
+  // Auto-suggest challenge for high-risk tasks
+  if (brief.riskScore && brief.riskScore >= 13) {
+    console.log(`\n⚠️  HIGH RISK DETECTED (P×I = ${brief.riskScore})`);
+    console.log(`   Consider running: challenge: "${brief.objective}"`);
+  }
+
   // 3. Generate prompts
   const prompts = generateAllPrompts(brief);
   console.log('\n' + printDelegationPlan(prompts));
