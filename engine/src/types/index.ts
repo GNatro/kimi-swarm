@@ -3,6 +3,8 @@
  * Version: 0.3.0-project-agnostic
  */
 
+import type { WorkerPrompt } from '../delegator/index.js';
+
 /** Represents a single file in the project with token estimation */
 export interface ProjectFile {
   relativePath: string;
@@ -148,6 +150,28 @@ export interface EngineConfig {
   // Service patterns for this language
   servicePatterns: string[];
 
+}
+
+/** Options for the orchestrate function */
+export interface OrchestrateOptions {
+  /** If true, run partitioner but do NOT write to bus. Show preview only. */
+  dryRun?: boolean;
+  /** If true, the plan has been approved. Write to bus normally. */
+  approved?: boolean;
+  /** If true, skip swarm partitioning entirely. Direct execution mode. */
+  light?: boolean;
+  /** Scope for partial approval (e.g., "Phase A only") */
+  scope?: string;
+}
+
+/** Extended result that includes dry-run information */
+export interface OrchestrateResult {
+  brief: TaskBrief;
+  prompts: WorkerPrompt[];
+  /** Only present in dry-run mode */
+  dryRun?: boolean;
+  /** Only present if plan is pending approval */
+  pendingApproval?: boolean;
 }
 
 export const DEFAULT_CONFIG: EngineConfig = {

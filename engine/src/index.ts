@@ -12,6 +12,7 @@ import type { PartitionRequest, PartitionResult } from './partitioner/index.js';
 import { DEFAULT_CONFIG } from './types/index.js';
 import type { TaskBrief } from './types/index.js';
 import type { WorkerPrompt } from './delegator/index.js';
+import type { OrchestrateOptions, OrchestrateResult } from './types/index.js';
 import { getProject } from './project/registry.js';
 import { resolveProjectId } from './project/resolver.js';
 
@@ -64,12 +65,34 @@ export { recordEvent, recordMetric, recordCounter, recordGauge, recordHistogram 
 export type { TelemetryEvent, TelemetryMetric, MetricDefinition } from './telemetry/types.js';
 
 /** Full orchestration pipeline */
-export async function orchestrate(userRequest: string): Promise<{
-  brief: TaskBrief;
-  prompts: WorkerPrompt[];
-}> {
+export async function orchestrate(
+  userRequest: string,
+  options?: OrchestrateOptions
+): Promise<OrchestrateResult> {
   console.log(`🐝 Swarm Engine v0.3.0 — Project-Agnostic`);
-  console.log(`Request: "${userRequest}"\n`);
+  console.log(`Request: "${userRequest}"`);
+  if (options?.dryRun) console.log(`Mode: PLAN ONLY (dry run)`);
+  if (options?.light) console.log(`Mode: LIGHT (skip swarm)`);
+  console.log();
+
+  // LIGHT MODE: skip everything
+  if (options?.light) {
+    return {
+      brief: {
+        taskId: `light-${Date.now()}`,
+        project: resolveProjectId(),
+        taskType: 'bug-fix',
+        objective: userRequest,
+        userRequest,
+        contextChunks: [],
+        constraints: ['Light mode: V1+V3+V5 only'],
+        successCriteria: ['Compiles', 'No secrets', 'Matches spec'],
+        estimatedTotalTokens: 0,
+        requiresPartitioning: false,
+      } as TaskBrief,
+      prompts: [],
+    };
+  }
 
   // 1. Partition
   const projectId = resolveProjectId();
@@ -83,7 +106,24 @@ export async function orchestrate(userRequest: string): Promise<{
   const prompts = generateAllPrompts(brief);
   console.log('\n' + printDelegationPlan(prompts));
 
-  // 4. Write to bus
+  // DRY RUN: don't write to bus, save pending state
+  if (options?.dryRun) {
+    const { savePending } = await import('./trigger-pending.js');
+    savePending({
+      taskId: brief.taskId,
+      request: userRequest,
+      partitionJson: JSON.stringify(partition),
+      briefJson: JSON.stringify(brief),
+      status: 'pending',
+      createdAt: new Date().toISOString(),
+    });
+    console.log('\n⏸️  PLAN ONLY — Task NOT written to bus');
+    console.log('   Review the plan above.');
+    console.log('   Say [APPROVED] to execute or REJECT to cancel.');
+    return { brief, prompts, dryRun: true, pendingApproval: true };
+  }
+
+  // 4. Write to bus (normal execution or approved)
   await writeTaskToBus(brief);
   await writePromptsToBus(prompts);
   console.log('\n✅ Task written to message bus');
