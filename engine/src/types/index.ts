@@ -82,6 +82,8 @@ export interface TaskBrief {
   requiresPartitioning: boolean;
   // For partitioned tasks
   subtasks?: Subtask[];
+  // P×I risk score (probability × impact, 1-25)
+  riskScore?: number;
 }
 
 /** A subtask derived from partitioning */

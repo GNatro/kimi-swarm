@@ -6,7 +6,7 @@
  * Version: 0.3.0-project-agnostic
  */
 
-import { partitionTask, buildTaskBrief, printPartition } from './partitioner/index.js';
+import { partitionTask, buildTaskBrief, printPartition, printRiskScore } from './partitioner/index.js';
 import { generateAllPrompts, printDelegationPlan, writeTaskToBus, writePromptsToBus } from './delegator/index.js';
 import type { PartitionRequest, PartitionResult } from './partitioner/index.js';
 import { DEFAULT_CONFIG } from './types/index.js';
@@ -101,6 +101,7 @@ export async function orchestrate(
 
   // 2. Build brief
   const brief = buildTaskBrief({ userRequest, projectId }, partition);
+  console.log(printRiskScore(brief));
 
   // 3. Generate prompts
   const prompts = generateAllPrompts(brief);

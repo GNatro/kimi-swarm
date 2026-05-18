@@ -100,6 +100,30 @@ function buildPromptText(brief: TaskBrief, subtask: Subtask, projectRoot: string
   lines.push(`## Checkpoint Instructions`);
   lines.push(getCheckpointInstructions(subtask.subtaskId, brief.project));
   lines.push('');
+
+  // Pre-mortem section (mandatory for all worker prompts)
+  const preMortem = `
+## 🪦 Pre-mortem (MANDATORY — complete before starting)
+
+Imagine this implementation has FAILED in production. Complete the following:
+
+**"This failed because ______."**
+
+List 3 specific ways this could fail:
+1. _______________________________________________________
+2. _______________________________________________________
+3. _______________________________________________________
+
+What would you do differently to prevent each failure?
+1. _______________________________________________________
+2. _______________________________________________________
+3. _______________________________________________________
+
+Do NOT skip this section. It is required for task acceptance.
+`;
+  lines.push(preMortem);
+  lines.push('');
+
   lines.push(`## Delivery Instructions (MANDATORY — DO NOT SKIP)`);
   lines.push(`When done, you MUST write your result to this exact file:`);
   lines.push(`\`${resultPath}\``);

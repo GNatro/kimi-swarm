@@ -284,6 +284,31 @@ export async function partitionTask(
 }
 
 /** Build a TaskBrief from partition result */
+function estimateProbability(brief: TaskBrief): number {
+  // Higher probability if:
+  // - Many files touched
+  // - Cross-cutting (multiple services)
+  // - No tests mentioned
+  let score = 2; // baseline
+  if (brief.requiresPartitioning) score += 1;
+  if ((brief.contextChunks?.length || 0) > 2) score += 1;
+  if (brief.taskType === 'cross-cutting') score += 1;
+  return Math.min(5, score);
+}
+
+function estimateImpact(brief: TaskBrief): number {
+  // Higher impact if:
+  // - Auth/security related
+  // - Database schema changes
+  // - API contract changes
+  let score = 2; // baseline
+  const obj = brief.objective.toLowerCase();
+  if (obj.includes('auth') || obj.includes('security')) score += 2;
+  if (obj.includes('database') || obj.includes('schema')) score += 1;
+  if (obj.includes('api') || obj.includes('endpoint')) score += 1;
+  return Math.min(5, score);
+}
+
 export function buildTaskBrief(
   request: PartitionRequest,
   partition: PartitionResult,
@@ -308,7 +333,7 @@ export function buildTaskBrief(
       }))
     : undefined;
 
-  return {
+  const brief: TaskBrief = {
     taskId,
     project: config.projectId,
     taskType: guessTaskType(request.userRequest),
@@ -326,6 +351,13 @@ export function buildTaskBrief(
     requiresPartitioning: partition.needsPartitioning,
     subtasks,
   };
+
+  // Calculate P×I score
+  const probability = estimateProbability(brief);
+  const impact = estimateImpact(brief);
+  brief.riskScore = probability * impact;
+
+  return brief;
 }
 
 function guessTaskType(request: string): TaskType {
@@ -358,5 +390,15 @@ export function printPartition(partition: PartitionResult): string {
     lines.push(`    Files: ${chunk.files.length}`);
     lines.push(`    Shared: ${chunk.sharedFiles.length}`);
   }
+  return lines.join('\n');
+}
+
+/** Print risk score from a brief (extended version) */
+export function printRiskScore(brief: TaskBrief): string {
+  if (!brief.riskScore) return '';
+  const probability = Math.min(5, Math.ceil(brief.riskScore / 2));
+  const impact = Math.min(5, Math.floor(brief.riskScore / 2) + 1);
+  const lines: string[] = [];
+  lines.push(`  Risk Score (P×I): ${brief.riskScore} ${brief.riskScore >= 13 ? '⚠️ HIGH' : ''}`);
   return lines.join('\n');
 }
