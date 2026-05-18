@@ -31,6 +31,17 @@ if (!request) {
 const trigger = parseTrigger(request);
 
 async function main() {
+  // ── ELITE ROLE AUTO-DETECTION ───────────────────────────────────────
+  const eliteRole = process.env.ELITE_ROLE as 'orchestrator' | 'worker' | undefined;
+  if (eliteRole === 'orchestrator') {
+    console.log('🎛️  Elite Orchestrator mode activated (via ELITE_ROLE)');
+  } else if (eliteRole === 'worker') {
+    console.log('🔧 Elite Worker mode activated (via ELITE_ROLE)');
+    console.log('   Waiting for WORK ORDER from Orchestrator...');
+    // Worker mode: do not auto-execute, just acknowledge
+    process.exit(0);
+  }
+
   // ── AUTO-DETECTION ──────────────────────────────────────────────────
   // If user did NOT write a trigger, run auto-detection
   let autoDecision: Awaited<ReturnType<typeof runAutoDetection>> | null = null;
