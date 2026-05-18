@@ -149,7 +149,7 @@ describe('delegator', () => {
       maxChunkTokens: 150_000,
       chunkSafetyMargin: 20_000,
       partitionThreshold: 120_000,
-      polybotRoot: '/test',
+      projectRoot: '/test',
       busRoot: '/test-bus',
     });
 

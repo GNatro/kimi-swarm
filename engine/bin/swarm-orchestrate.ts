@@ -63,6 +63,18 @@ async function main() {
       break;
     }
 
+    case 'audit': {
+      console.log('\n🔍 Running self-audit...');
+      const { execSync } = await import('child_process');
+      try {
+        const output = execSync('bash ~/brain-stack/scripts/audit-self.sh 10', { encoding: 'utf-8' });
+        console.log(output);
+      } catch (err) {
+        console.error('Audit failed:', err);
+      }
+      break;
+    }
+
     case 'challenge': {
       const { runChallenge } = await import('../src/challenge-engine.js');
       const result = await runChallenge(trigger.subject || 'current plan');
