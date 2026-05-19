@@ -6,12 +6,13 @@
 
 import { existsSync, mkdirSync, readdirSync, readFileSync, renameSync, writeFileSync, statSync } from 'fs';
 import { join, resolve, normalize, isAbsolute } from 'path';
+import os from 'os';
 import type { FileLock, LockConflict, LockAcquireResult } from './types.js';
 import { DEFAULT_CONFIG } from '../types/index.js';
 import { getProject } from '../project/registry.js';
 import { recordEvent, recordCounter } from '../telemetry/collector.js';
 
-const HOME = process.env.HOME || '/home/grapho';
+const HOME = process.env.HOME || os.homedir() || '/tmp';
 const DEFAULT_TTL_MINUTES = 60;
 const MAX_FILES_PER_LOCK = 20;
 

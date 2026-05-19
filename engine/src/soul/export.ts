@@ -7,6 +7,7 @@
 import { execSync } from 'child_process';
 import { existsSync, mkdirSync, readFileSync, writeFileSync, renameSync } from 'fs';
 import { dirname, join } from 'path';
+import os from 'os';
 import {
   type SoulExportOptions,
   type SoulExportResult,
@@ -18,7 +19,7 @@ import { DEFAULT_CONFIG } from '../types/index.js';
 import { getProject } from '../project/registry.js';
 import { recordEvent, recordCounter } from '../telemetry/collector.js';
 
-const HOME = process.env.HOME || '/home/grapho';
+const HOME = process.env.HOME || os.homedir() || '/tmp';
 const SESSION_DIR = join(HOME, '.kimi/memory/sessions/active');
 const MAX_FILE_SIZE = 10 * 1024; // 10KB
 

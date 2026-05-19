@@ -4,6 +4,7 @@
  */
 
 import { createHash, randomUUID } from 'crypto';
+import os from 'os';
 
 // ═══════════════════════════════════════════════════════════════
 //  CONSTANTS
@@ -23,14 +24,14 @@ export const TOKEN_ESTIMATE_RATIO = 4; // ~4 chars per token
 // ═══════════════════════════════════════════════════════════════
 
 function getStateDir(): string {
-  return `${process.env.HOME || '/home/mrsscp'}/.kimi/state`;
+  return `${process.env.HOME || os.homedir() || '/tmp'}/.kimi/state`;
 }
 
 export const CAUSAL_REGISTRY_PATH = () => `${getStateDir()}/causal-registry.jsonl`;
 export const PLAN_GRAPH_PATH = () => `${getStateDir()}/plan-graph-index.json`;
 export const CHECKLISTS_DIR = () => `${getStateDir()}/checklists`;
 export const ROLLUPS_DIR = () => `${getStateDir()}/rollups`;
-export const COMPACT_STATE_PATH = () => `${process.env.HOME || '/home/mrsscp'}/.kimi/memory/sessions/active/anti-drift-compact-state.json`;
+export const COMPACT_STATE_PATH = () => `${process.env.HOME || os.homedir() || '/tmp'}/.kimi/memory/sessions/active/anti-drift-compact-state.json`;
 
 // ═══════════════════════════════════════════════════════════════
 //  DECISION TYPES

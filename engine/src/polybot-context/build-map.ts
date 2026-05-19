@@ -18,8 +18,10 @@ import {
   buildProjectFile,
   sumTokens,
 } from '../utils/token-estimator.js';
+import { resolveProjectConfig } from '../project/resolver.js';
 
-const POLYBOT_ROOT = '/home/grapho/projects/polybot';
+const config = resolveProjectConfig();
+const POLYBOT_ROOT = config.root || process.cwd();
 const SRC_ROOT = join(POLYBOT_ROOT, 'src');
 const OUTPUT_PATH = new URL('./map.json', import.meta.url).pathname;
 

@@ -9,6 +9,7 @@ import {
   loadRollup,
   getLatestRollup,
   shouldGenerateRollup,
+  autoGenerateRollup,
 } from '../../src/anti-drift/rollup-generator.js';
 
 const TEST_DIR = mkdtempSync(join(tmpdir(), 'anti-drift-rollup-test-'));
@@ -161,5 +162,20 @@ describe('rollup-generator', () => {
     expect(shouldGenerateRollup(30)).toBe(true);
     expect(shouldGenerateRollup(5)).toBe(false);
     expect(shouldGenerateRollup(0)).toBe(false);
+  });
+
+  it('autoGenerateRollup creates and saves rollup file at interval turns', async () => {
+    const rollup = autoGenerateRollup(10);
+    expect(rollup).not.toBeNull();
+    if (rollup) {
+      expect(
+        (await import('fs')).existsSync(`${ROLLUPS_DIR()}/${rollup.rollupId}.json`)
+      ).toBe(true);
+    }
+  });
+
+  it('autoGenerateRollup returns null at non-interval turns', () => {
+    const rollup = autoGenerateRollup(5);
+    expect(rollup).toBeNull();
   });
 });

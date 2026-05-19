@@ -7,6 +7,7 @@
 import { existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from 'fs';
 import { join } from 'path';
 import { execSync } from 'child_process';
+import os from 'os';
 import {
   type SoulManifest,
   type SoulRegistry,
@@ -18,7 +19,7 @@ import { DEFAULT_CONFIG } from '../types/index.js';
 import { getProject } from '../project/registry.js';
 import { recordEvent, recordCounter } from '../telemetry/collector.js';
 
-const HOME = process.env.HOME || '/home/grapho';
+const HOME = process.env.HOME || os.homedir() || '/tmp';
 const SESSION_DIR = join(HOME, '.kimi/memory/sessions/active');
 
 function readJsonSafe<T>(path: string, fallback: T): T {

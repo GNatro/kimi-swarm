@@ -4,9 +4,10 @@
 
 import { existsSync, readFileSync, writeFileSync, renameSync, mkdirSync } from 'fs';
 import { dirname, join } from 'path';
+import os from 'os';
 import type { ProjectConfig, ProjectRegistry } from './types.js';
 
-const REGISTRY_PATH = join(process.env.HOME || '/home/grapho', '.kimi/swarm-projects.json');
+const REGISTRY_PATH = join(process.env.HOME || os.homedir() || '/tmp', '.kimi/swarm-projects.json');
 const REGISTRY_BACKUP = `${REGISTRY_PATH}.backup`;
 
 function readJsonSafe<T>(path: string, fallback: T): T {

@@ -4,7 +4,7 @@
  * Skips: Partitioner, PEV formal, V2/V4/V6/V7
  */
 
-import { execSync } from 'child_process';
+import { execSync, spawnSync } from 'child_process';
 import { existsSync } from 'fs';
 
 export interface LightCheckResult {
@@ -62,7 +62,8 @@ export async function runLightChecks(projectRoot: string): Promise<LightResult> 
       const riskyFiles: string[] = [];
       for (const file of files) {
         try {
-          const content = execSync(`git diff "${file}"`, { cwd: projectRoot, encoding: 'utf-8' });
+          const result = spawnSync('git', ['diff', '--no-color', '--', file], { cwd: projectRoot, encoding: 'utf-8' });
+          const content = result.stdout || '';
           for (const pattern of secretPatterns) {
             if (pattern.test(content)) {
               riskyFiles.push(file);

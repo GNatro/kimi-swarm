@@ -4,9 +4,10 @@
 
 import { appendFileSync, mkdirSync, existsSync, writeFileSync, readFileSync } from 'fs';
 import { dirname, join } from 'path';
+import os from 'os';
 import type { TelemetryEvent, TelemetryMetric } from './types.js';
 
-const TELEMETRY_DIR = join(process.env.HOME || '/home/grapho', '.kimi/state/telemetry');
+const TELEMETRY_DIR = join(process.env.HOME || os.homedir() || '/tmp', '.kimi/state/telemetry');
 const EVENTS_FILE = join(TELEMETRY_DIR, 'events.jsonl');
 
 function ensureDir() {
