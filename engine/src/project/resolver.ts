@@ -24,7 +24,7 @@ export function resolveProjectId(options?: { cwd?: string; env?: string }): stri
 
   const projectName = gitRoot ? basename(gitRoot) : basename(cwd);
 
-  // 3. Search registry by root or name
+  // 3. Search registry by root or name (for compatibility, not required)
   const registry = loadRegistry();
   for (const [id, proj] of Object.entries(registry.projects)) {
     if (proj.root === gitRoot || proj.name === projectName || id === projectName) {
@@ -32,8 +32,8 @@ export function resolveProjectId(options?: { cwd?: string; env?: string }): stri
     }
   }
 
-  // 4. Fail-open: return "general"
-  return 'general';
+  // 4. Project-agnostic: ALWAYS return detected name, never fail
+  return projectName;
 }
 
 export function resolveProjectConfig(options?: { cwd?: string; env?: string }): ProjectConfig {
